@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="57,47,445,362" dataBinding="{'ctxType':'proc','ctxFile':'ContentPane_B_24Flow','ctxName':'ContentPane_B_24Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'ContentPane_B_24.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="362" verticalAlignment="1" widthHint="445" heightType="FixedSize" widthType="FixedSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData horizontalSpan="2" widthHint="486" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form01">
+        <gridData heightHint="44" verticalAlignment="1" widthHint="420" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="TabbedPane" id="tabbedPane">
+            <gridData heightHint="258" verticalAlignment="1" widthHint="365" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <container name="ContentPane" title="Tab01" id="ContentPane01">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </container>
+            <container name="ContentPane" title="Tab02" id="ContentPane02">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </container>
+            <container name="ContentPane" title="Tab03" id="ContentPane03">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </container>
+            <container name="ContentPane" title="Tab04" id="ContentPane04">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </container>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=reload" id="btn_reload" text="B24_ContentPane">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button" buttonType="button" text="Button">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="2"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="tabbedPane">
+          <function name="selectChildByIndex">
+            <parameter>
+              <value type="constant" constant="2"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="ContentPane03" event="onShow"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="ContentPane01" property="title">
+          <value type="constant" constant="'str'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

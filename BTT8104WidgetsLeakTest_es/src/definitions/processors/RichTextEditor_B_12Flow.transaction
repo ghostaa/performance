@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:transaction="http://btt.cn.ibm.com/transaction">
+  <transaction:WorkProduct xmi:id="_StBJEJH3EeKSwIY3Jt3HEA">
+    <processor xmi:type="transaction:Processor" xmi:id="_StBJEpH3EeKSwIY3Jt3HEA" tag="Processor" id="RichTextEditor_B_12Flow">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_StBJE5H3EeKSwIY3Jt3HEA" name="context" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_StBJFJH3EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_StBJFZH3EeKSwIY3Jt3HEA" key="_StBJFJH3EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Flow"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_UzKugJH9EeKSwIY3Jt3HEA" key="_StBJE5H3EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Ctx"/>
+      <transitions xmi:type="transaction:Transition" xmi:id="_YJtbQJH3EeKSwIY3Jt3HEA" tag="Transition" id="initial.start" target="_4B5QoJH-EeKSwIY3Jt3HEA" source="_U7UzsJH3EeKSwIY3Jt3HEA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YJtbQZH3EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YJtbRJH3EeKSwIY3Jt3HEA" name="Output Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YJtbQ5H3EeKSwIY3Jt3HEA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YJtbR5H3EeKSwIY3Jt3HEA" name="O1Output Mapping Behaviour" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YJtbRZH3EeKSwIY3Jt3HEA" name="O2Input Mapping Behaviour" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YJtbQpH3EeKSwIY3Jt3HEA" key="_YJtbQZH3EeKSwIY3Jt3HEA" value="initial.start"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YJtbRpH3EeKSwIY3Jt3HEA" key="_YJtbRZH3EeKSwIY3Jt3HEA" value="Override state mapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YJtbSJH3EeKSwIY3Jt3HEA" key="_YJtbR5H3EeKSwIY3Jt3HEA" value="Override state mapping"/>
+      </transitions>
+      <transitions xmi:type="transaction:Transition" xmi:id="_ceuTsJH3EeKSwIY3Jt3HEA" tag="Transition" id="RichTextEditor_B_12.nextCase" target="_VJekcJH3EeKSwIY3Jt3HEA" source="_VX73MJH3EeKSwIY3Jt3HEA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ceuTsZH3EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ceuTtJH3EeKSwIY3Jt3HEA" name="Output Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ceuTs5H3EeKSwIY3Jt3HEA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ceuTt5H3EeKSwIY3Jt3HEA" name="O1Output Mapping Behaviour" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ceuTtZH3EeKSwIY3Jt3HEA" name="O2Input Mapping Behaviour" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ceuTspH3EeKSwIY3Jt3HEA" key="_ceuTsZH3EeKSwIY3Jt3HEA" value="RichTextEditor_B_12.nextCase"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ceuTtpH3EeKSwIY3Jt3HEA" key="_ceuTtZH3EeKSwIY3Jt3HEA" value="Override state mapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ceuTuJH3EeKSwIY3Jt3HEA" key="_ceuTt5H3EeKSwIY3Jt3HEA" value="Override state mapping"/>
+      </transitions>
+      <transitions xmi:type="transaction:Transition" xmi:id="_dJyC4JH3EeKSwIY3Jt3HEA" tag="Transition" id="RichTextEditor_B_12.reload" target="_VX73MJH3EeKSwIY3Jt3HEA" source="_VX73MJH3EeKSwIY3Jt3HEA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_dJyC4ZH3EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_dJyC5JH3EeKSwIY3Jt3HEA" name="Output Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_dJyC45H3EeKSwIY3Jt3HEA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_dJyC55H3EeKSwIY3Jt3HEA" name="O1Output Mapping Behaviour" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_dJyC5ZH3EeKSwIY3Jt3HEA" name="O2Input Mapping Behaviour" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_dJyC4pH3EeKSwIY3Jt3HEA" key="_dJyC4ZH3EeKSwIY3Jt3HEA" value="RichTextEditor_B_12.reload"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_dJyC5pH3EeKSwIY3Jt3HEA" key="_dJyC5ZH3EeKSwIY3Jt3HEA" value="Override state mapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_dJyC6JH3EeKSwIY3Jt3HEA" key="_dJyC55H3EeKSwIY3Jt3HEA" value="Override state mapping"/>
+      </transitions>
+      <transitions xmi:type="transaction:Transition" xmi:id="_PtyeMJH_EeKSwIY3Jt3HEA" tag="Transition" id="RichTextEditor_B_12Op.initial" target="_VX73MJH3EeKSwIY3Jt3HEA" source="_4B5QoJH-EeKSwIY3Jt3HEA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_PtyeMZH_EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_PtyeNJH_EeKSwIY3Jt3HEA" name="Output Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_PtyeM5H_EeKSwIY3Jt3HEA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_PtyeN5H_EeKSwIY3Jt3HEA" name="O1Output Mapping Behaviour" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_PtyeNZH_EeKSwIY3Jt3HEA" name="O2Input Mapping Behaviour" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PtyeMpH_EeKSwIY3Jt3HEA" key="_PtyeMZH_EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Op.initial"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PtyeNpH_EeKSwIY3Jt3HEA" key="_PtyeNZH_EeKSwIY3Jt3HEA" value="Override state mapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PtyeOJH_EeKSwIY3Jt3HEA" key="_PtyeN5H_EeKSwIY3Jt3HEA" value="Override state mapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_UFooMJH_EeKSwIY3Jt3HEA" key="_PtyeNJH_EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Op.initial_OutputFmt"/>
+      </transitions>
+      <children xmi:type="transaction:State" xmi:id="_U7UzsJH3EeKSwIY3Jt3HEA" tag="InitialState" id="initial" targetTransitions="_YJtbQJH3EeKSwIY3Jt3HEA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_U7UztZH3EeKSwIY3Jt3HEA" name="Output Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_U7UzsZH3EeKSwIY3Jt3HEA" name="id" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_U7Uzs5H3EeKSwIY3Jt3HEA" name="type" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_U7UzspH3EeKSwIY3Jt3HEA" key="_U7UzsZH3EeKSwIY3Jt3HEA" value="initial"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_U7UztJH3EeKSwIY3Jt3HEA" key="_U7Uzs5H3EeKSwIY3Jt3HEA" value="initial"/>
+        <events xmi:type="transaction:Event" xmi:id="_U7UztpH3EeKSwIY3Jt3HEA" name="start" automatic="true"/>
+      </children>
+      <children xmi:type="transaction:State" xmi:id="_VJekcJH3EeKSwIY3Jt3HEA" tag="FinalState" id="OK" sourceTransitions="_ceuTsJH3EeKSwIY3Jt3HEA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_VJekdZH3EeKSwIY3Jt3HEA" name="Exit Event" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_VJekcZH3EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_VJekdpH3EeKSwIY3Jt3HEA" name="Final Page" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_VJekd5H3EeKSwIY3Jt3HEA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_VJekc5H3EeKSwIY3Jt3HEA" name="type" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_VJekcpH3EeKSwIY3Jt3HEA" key="_VJekcZH3EeKSwIY3Jt3HEA" value="OK"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_VJekdJH3EeKSwIY3Jt3HEA" key="_VJekc5H3EeKSwIY3Jt3HEA" value="final"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_V-YMIJH3EeKSwIY3Jt3HEA" key="_VJekdZH3EeKSwIY3Jt3HEA" value="OK"/>
+      </children>
+      <children xmi:type="transaction:State" xmi:id="_VX73MJH3EeKSwIY3Jt3HEA" tag="PageState" id="RichTextEditor_B_12" targetTransitions="_ceuTsJH3EeKSwIY3Jt3HEA _dJyC4JH3EeKSwIY3Jt3HEA" sourceTransitions="_YJtbQJH3EeKSwIY3Jt3HEA _dJyC4JH3EeKSwIY3Jt3HEA _PtyeMJH_EeKSwIY3Jt3HEA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_VX73M5H3EeKSwIY3Jt3HEA" name="Page" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_VX73MZH3EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_VX73NZH3EeKSwIY3Jt3HEA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_VX73NpH3EeKSwIY3Jt3HEA" name="Output Data Format" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_VX73MpH3EeKSwIY3Jt3HEA" key="_VX73MZH3EeKSwIY3Jt3HEA" value="RichTextEditor_B_12"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_VX73NJH3EeKSwIY3Jt3HEA" key="_VX73M5H3EeKSwIY3Jt3HEA" value="RichTextEditor_B_12.xui"/>
+        <events xmi:type="transaction:Event" xmi:id="_Wzbk0JH3EeKSwIY3Jt3HEA" name="reload" automatic="true"/>
+        <events xmi:type="transaction:Event" xmi:id="_Wzbk0ZH3EeKSwIY3Jt3HEA" name="nextCase" automatic="true"/>
+      </children>
+      <children xmi:type="transaction:State" xmi:id="_4B5QoJH-EeKSwIY3Jt3HEA" tag="OperationState" id="RichTextEditor_B_12Op" targetTransitions="_PtyeMJH_EeKSwIY3Jt3HEA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_4B5QoZH-EeKSwIY3Jt3HEA" name="Operation" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_4B5Qo5H-EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_4B5Qp5H-EeKSwIY3Jt3HEA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_4B5QqJH-EeKSwIY3Jt3HEA" name="Output Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_4B5QpZH-EeKSwIY3Jt3HEA" name="type" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_4B5QopH-EeKSwIY3Jt3HEA" key="_4B5QoZH-EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Op"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_4B5QpJH-EeKSwIY3Jt3HEA" key="_4B5Qo5H-EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Op"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_4B5QppH-EeKSwIY3Jt3HEA" key="_4B5QpZH-EeKSwIY3Jt3HEA" value="operation"/>
+        <events xmi:type="transaction:Event" xmi:id="_MjlMAJH_EeKSwIY3Jt3HEA" name="initial"/>
+      </children>
+    </processor>
+    <context xmi:type="transaction:ContextCategory" xmi:id="_StBJFpH3EeKSwIY3Jt3HEA">
+      <contexts xmi:type="transaction:Context" xmi:id="_d-YvoJH3EeKSwIY3Jt3HEA" tag="context" id="RichTextEditor_B_12Ctx">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_d-YvoZH3EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_d-YvopH3EeKSwIY3Jt3HEA" name="type" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_d-Yvo5H3EeKSwIY3Jt3HEA" name="addToDynamicKColl" type="java.lang.Boolean"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_d-YvpJH3EeKSwIY3Jt3HEA" name="parent" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_d-YvpZH3EeKSwIY3Jt3HEA" key="_d-YvopH3EeKSwIY3Jt3HEA" value="op"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_d-YvppH3EeKSwIY3Jt3HEA" key="_d-YvoZH3EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Ctx"/>
+        <refElement xmi:type="transaction:RefKColl" xmi:id="_btbx8JH9EeKSwIY3Jt3HEA" tag="refKColl">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_btbx8ZH9EeKSwIY3Jt3HEA" name="refId" required="true" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_cKC1cJH9EeKSwIY3Jt3HEA" key="_btbx8ZH9EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Record"/>
+        </refElement>
+      </contexts>
+    </context>
+    <data xmi:type="transaction:DataCategory" xmi:id="_StBJF5H3EeKSwIY3Jt3HEA">
+      <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_1bX-gJH3EeKSwIY3Jt3HEA" tag="kColl" id="RichTextEditor_B_12Record">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_1bX-gZH3EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_1bX-gpH3EeKSwIY3Jt3HEA" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_1bX-g5H3EeKSwIY3Jt3HEA" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_1bX-hJH3EeKSwIY3Jt3HEA" name="dynamic" type="java.lang.Boolean"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_1bX-hZH3EeKSwIY3Jt3HEA" key="_1bX-g5H3EeKSwIY3Jt3HEA" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_1bX-hpH3EeKSwIY3Jt3HEA" key="_1bX-gZH3EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Record"/>
+        <elements xmi:type="transaction:DataField" xmi:id="_2OfdgJH3EeKSwIY3Jt3HEA" tag="field" id="RichTextEditor_B_12Field">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_2OfdgZH3EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_2OfdgpH3EeKSwIY3Jt3HEA" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_2Ofdg5H3EeKSwIY3Jt3HEA" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_2OfdhJH3EeKSwIY3Jt3HEA" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_2OfdhZH3EeKSwIY3Jt3HEA" key="_2Ofdg5H3EeKSwIY3Jt3HEA" value="both"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_2OfdhpH3EeKSwIY3Jt3HEA" key="_2OfdgZH3EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Field"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_p0K_8JH5EeKSwIY3Jt3HEA" key="_2OfdhJH3EeKSwIY3Jt3HEA" value=""/>
+        </elements>
+      </dataElements>
+    </data>
+    <format xmi:type="transaction:FormatCategory" xmi:id="_StBJGZH3EeKSwIY3Jt3HEA">
+      <formatters xmi:type="transaction:Formatter" xmi:id="_UFooMZH_EeKSwIY3Jt3HEA" tag="fmtDef" id="RichTextEditor_B_12Op.initial_OutputFmt">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_UFooMpH_EeKSwIY3Jt3HEA" name="id" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_UFooM5H_EeKSwIY3Jt3HEA" key="_UFooMpH_EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Op.initial_OutputFmt"/>
+        <rootElement xmi:type="transaction:DataMapperConverterFormatElement" xmi:id="_UFooNJH_EeKSwIY3Jt3HEA" tag="mapperConverterExpression">
+          <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_UFooNZH_EeKSwIY3Jt3HEA" tag="map">
+            <attributes xmi:type="transaction:Attribute" xmi:id="_UFooNpH_EeKSwIY3Jt3HEA" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+            <attributes xmi:type="transaction:Attribute" xmi:id="_UFooN5H_EeKSwIY3Jt3HEA" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+            <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_UFooOJH_EeKSwIY3Jt3HEA" key="_UFooNpH_EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Field"/>
+            <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_UFooOZH_EeKSwIY3Jt3HEA" key="_UFooN5H_EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Field"/>
+            <fromValue xmi:type="transaction:ContextValue" xmi:id="_UFooOpH_EeKSwIY3Jt3HEA" type="DataField" valueToString="RichTextEditor_B_12Field" field="RichTextEditor_B_12Field" contextName="RichTextEditor_B_12Ctx[RichTextEditor_B_12Op]"/>
+            <toValue xmi:type="transaction:ContextValue" xmi:id="_UFooO5H_EeKSwIY3Jt3HEA" type="DataField" valueToString="RichTextEditor_B_12Field" field="RichTextEditor_B_12Field" contextName="RichTextEditor_B_12Ctx"/>
+          </mappers>
+        </rootElement>
+      </formatters>
+    </format>
+    <operation xmi:type="transaction:OperationCategory" xmi:id="_StBJGJH3EeKSwIY3Jt3HEA"/>
+    <service xmi:type="transaction:ServiceCategory" xmi:id="_StBJGpH3EeKSwIY3Jt3HEA"/>
+    <globalTag xmi:type="transaction:Taggable" xmi:id="_StBJEZH3EeKSwIY3Jt3HEA"/>
+  </transaction:WorkProduct>
+  <notation:Diagram xmi:id="_StK6EJH3EeKSwIY3Jt3HEA" type="Editor" element="_StBJEpH3EeKSwIY3Jt3HEA" name="RichTextEditor_B_12Flow.transaction" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_U7Uzt5H3EeKSwIY3Jt3HEA" type="1001" element="_U7UzsJH3EeKSwIY3Jt3HEA">
+      <children xmi:type="notation:Node" xmi:id="_U7UzupH3EeKSwIY3Jt3HEA" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_U7Uzu5H3EeKSwIY3Jt3HEA" type="4002"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_U7UzuJH3EeKSwIY3Jt3HEA" fontName="Arial" fontHeight="10" fillColor="9956278" gradient="16777215, 9956278, 0" lineColor="0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U7UzuZH3EeKSwIY3Jt3HEA" x="19" y="209"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_VJekeJH3EeKSwIY3Jt3HEA" type="1001" element="_VJekcJH3EeKSwIY3Jt3HEA">
+      <children xmi:type="notation:Node" xmi:id="_VJeke5H3EeKSwIY3Jt3HEA" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_VJekfJH3EeKSwIY3Jt3HEA" type="4002"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_VJekeZH3EeKSwIY3Jt3HEA" fontName="Arial" fontHeight="10" fillColor="14798212" gradient="16777215, 14798212, 0" lineColor="0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VJekepH3EeKSwIY3Jt3HEA" x="529" y="203"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_VX73N5H3EeKSwIY3Jt3HEA" type="1001" element="_VX73MJH3EeKSwIY3Jt3HEA">
+      <children xmi:type="notation:Node" xmi:id="_VYFoMJH3EeKSwIY3Jt3HEA" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_VYFoMZH3EeKSwIY3Jt3HEA" type="4002"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_VX73OJH3EeKSwIY3Jt3HEA" fontName="Arial" fontHeight="10" fillColor="121087" gradient="16777215, 121087, 0" lineColor="0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VX73OZH3EeKSwIY3Jt3HEA" x="304" y="209"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_4B5QqZH-EeKSwIY3Jt3HEA" type="1001" element="_4B5QoJH-EeKSwIY3Jt3HEA">
+      <children xmi:type="notation:Node" xmi:id="_4B5QrJH-EeKSwIY3Jt3HEA" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_4B5QrZH-EeKSwIY3Jt3HEA" type="4002"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_4B5QqpH-EeKSwIY3Jt3HEA" fontName="Arial" fontHeight="10" fillColor="13865911" gradient="16777215, 13865911, 0" lineColor="0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4B5Qq5H-EeKSwIY3Jt3HEA" x="114" y="209"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_StK6EZH3EeKSwIY3Jt3HEA"/>
+    <edges xmi:type="notation:Edge" xmi:id="_YJtbSZH3EeKSwIY3Jt3HEA" type="3001" element="_YJtbQJH3EeKSwIY3Jt3HEA" source="_U7Uzt5H3EeKSwIY3Jt3HEA" target="_4B5QqZH-EeKSwIY3Jt3HEA">
+      <children xmi:type="notation:Node" xmi:id="_YJtbUJH3EeKSwIY3Jt3HEA" type="4003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_YJtbUZH3EeKSwIY3Jt3HEA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_YJtbSpH3EeKSwIY3Jt3HEA" lineColor="0" lineWidth="1"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_YJtbS5H3EeKSwIY3Jt3HEA" fontName="Arial" fontHeight="10"/>
+      <styles xmi:type="notation:ArrowStyle" xmi:id="_YJtbTJH3EeKSwIY3Jt3HEA" arrowTarget="SolidArrow"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_YJtbTZH3EeKSwIY3Jt3HEA"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_YJtbTpH3EeKSwIY3Jt3HEA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YJtbT5H3EeKSwIY3Jt3HEA" points="[0, 0, -126, 0]$[103, 0, -23, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YJtbUpH3EeKSwIY3Jt3HEA" id="(1.0,0.5692307692307692)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YJtbU5H3EeKSwIY3Jt3HEA" id="(0.019230769230769232,0.5384615384615384)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_ceuTuZH3EeKSwIY3Jt3HEA" type="3001" element="_ceuTsJH3EeKSwIY3Jt3HEA" source="_VX73N5H3EeKSwIY3Jt3HEA" target="_VJekeJH3EeKSwIY3Jt3HEA">
+      <children xmi:type="notation:Node" xmi:id="_ceuTwJH3EeKSwIY3Jt3HEA" type="4003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ceuTwZH3EeKSwIY3Jt3HEA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_ceuTupH3EeKSwIY3Jt3HEA" lineColor="0" lineWidth="1"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_ceuTu5H3EeKSwIY3Jt3HEA" fontName="Arial" fontHeight="10"/>
+      <styles xmi:type="notation:ArrowStyle" xmi:id="_ceuTvJH3EeKSwIY3Jt3HEA" arrowTarget="SolidArrow"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_ceuTvZH3EeKSwIY3Jt3HEA"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_ceuTvpH3EeKSwIY3Jt3HEA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ceuTv5H3EeKSwIY3Jt3HEA" points="[0, -8, -172, 0]$[162, -5, -10, 3]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ceuTwpH3EeKSwIY3Jt3HEA" id="(1.0,0.6)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ceuTw5H3EeKSwIY3Jt3HEA" id="(0.20833333333333334,0.5692307692307692)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_dJyC6ZH3EeKSwIY3Jt3HEA" type="3001" element="_dJyC4JH3EeKSwIY3Jt3HEA" source="_VX73N5H3EeKSwIY3Jt3HEA" target="_VX73N5H3EeKSwIY3Jt3HEA">
+      <children xmi:type="notation:Node" xmi:id="_dJyC8JH3EeKSwIY3Jt3HEA" type="4003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_dJyC8ZH3EeKSwIY3Jt3HEA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_dJyC6pH3EeKSwIY3Jt3HEA" lineColor="0" lineWidth="1"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_dJyC65H3EeKSwIY3Jt3HEA" fontName="Arial" fontHeight="10"/>
+      <styles xmi:type="notation:ArrowStyle" xmi:id="_dJyC7JH3EeKSwIY3Jt3HEA" arrowTarget="SolidArrow"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_dJyC7ZH3EeKSwIY3Jt3HEA"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_dJyC7pH3EeKSwIY3Jt3HEA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dJyC75H3EeKSwIY3Jt3HEA" points="[0, 0, 0, -1]$[0, 0, 0, -1]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dJyC8pH3EeKSwIY3Jt3HEA" id="(0.9928057553956835,0.7076923076923077)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dJyC85H3EeKSwIY3Jt3HEA" id="(1.0,0.5692307692307692)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_PtyeOZH_EeKSwIY3Jt3HEA" type="3001" element="_PtyeMJH_EeKSwIY3Jt3HEA" source="_4B5QqZH-EeKSwIY3Jt3HEA" target="_VX73N5H3EeKSwIY3Jt3HEA">
+      <children xmi:type="notation:Node" xmi:id="_PtyeQJH_EeKSwIY3Jt3HEA" type="4003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_PtyeQZH_EeKSwIY3Jt3HEA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_PtyeOpH_EeKSwIY3Jt3HEA" lineColor="0" lineWidth="1"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_PtyeO5H_EeKSwIY3Jt3HEA" fontName="Arial" fontHeight="10"/>
+      <styles xmi:type="notation:ArrowStyle" xmi:id="_PtyePJH_EeKSwIY3Jt3HEA" arrowTarget="SolidArrow"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_PtyePZH_EeKSwIY3Jt3HEA"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_PtyePpH_EeKSwIY3Jt3HEA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_PtyeP5H_EeKSwIY3Jt3HEA" points="[0, -3, -50, 0]$[34, -4, -16, -1]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_PtyeQpH_EeKSwIY3Jt3HEA" id="(1.0,0.5076923076923077)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_PtyeQ5H_EeKSwIY3Jt3HEA" id="(0.11510791366906475,0.46153846153846156)"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>

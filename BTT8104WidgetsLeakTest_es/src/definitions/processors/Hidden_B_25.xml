@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Hidden_B_25>
+
+
+	<htmlProcessor context="Hidden_B_25Ctx" id="Hidden_B_25">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Hidden_B_25"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Hidden_B_25.jsp" id="Hidden_B_25">
+			<transitions>
+				<htmlTransition id="Hidden_B_25.reload" targetState="Hidden_B_25"/>
+				<htmlTransition id="Hidden_B_25.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Hidden_B_25Ctx" type="op">
+		<refKColl refId="Hidden_B_25Record"/>
+	</context>
+
+	<kColl id="Hidden_B_25Record">
+		<field id="hiddenField" value="123"/>
+	</kColl>
+
+</Hidden_B_25>

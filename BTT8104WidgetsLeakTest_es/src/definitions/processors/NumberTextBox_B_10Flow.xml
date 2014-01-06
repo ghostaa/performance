@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NumberTextBox_B_10Flow>
+
+
+	<htmlProcessor context="NumberTextBox_B_10Ctx" id="NumberTextBox_B_10Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="NumberTextBox_B_10"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="NumberTextBox_B_10.jsp" id="NumberTextBox_B_10">
+			<transitions>
+				<htmlTransition id="NumberTextBox_B_10.nextCase" targetState="OK"/>
+				<htmlTransition id="NumberTextBox_B_10.reload" targetState="NumberTextBox_B_10"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="NumberTextBox_B_10Ctx" type="op">
+		<refKColl refId="NumberTextBox_B_10Record"/>
+	</context>
+
+	<kColl id="NumberTextBox_B_10Record">
+		<data id="defaultNumberTypeFloat" value="123456.00" refType="Number">
+			<param value="float" id="default:numberType"/>
+		</data>
+	</kColl>
+
+</NumberTextBox_B_10Flow>

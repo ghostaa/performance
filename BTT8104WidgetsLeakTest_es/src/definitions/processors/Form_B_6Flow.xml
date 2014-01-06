@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form_B_6Flow>
+
+
+	<htmlProcessor context="Form_B_6Ctx" id="Form_B_6Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Form_B_6"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Form_B_6.jsp" id="Form_B_6">
+			<transitions>
+				<htmlTransition id="Form_B_6.nextCase" targetState="OK"/>
+				<htmlTransition id="Form_B_6.reload" targetState="Form_B_6"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Form_B_6Ctx" type="op">
+		<refKColl refId="Form_B_6Record"/>
+	</context>
+
+	<kColl id="Form_B_6Record">
+		<field id="Form_B_6Field"/>
+	</kColl>
+
+</Form_B_6Flow>

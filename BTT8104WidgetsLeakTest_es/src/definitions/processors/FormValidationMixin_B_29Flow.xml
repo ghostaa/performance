@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FormValidationMixin_B_29Flow>
+
+
+	<htmlProcessor context="FormValidationMixin_B_29Ctx" id="FormValidationMixin_B_29Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="FormValidationMixin_B_29"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="FormValidationMixin_B_29.jsp" id="FormValidationMixin_B_29">
+			<transitions>
+				<htmlTransition id="FormValidationMixin_B_29.reload" targetState="FormValidationMixin_B_29"/>
+				<htmlTransition id="FormValidationMixin_B_29.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="FormValidationMixin_B_29Ctx" type="op">
+		<refKColl refId="FormValidationMixin_B_29Record"/>
+	</context>
+
+	<kColl id="FormValidationMixin_B_29Record">
+		<field id="FormValidationMixin_B_29Field" value="12"/>
+	</kColl>
+
+</FormValidationMixin_B_29Flow>

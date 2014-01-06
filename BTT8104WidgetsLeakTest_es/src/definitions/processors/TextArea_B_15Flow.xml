@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextArea_B_15Flow>
+
+
+	<htmlProcessor context="TextArea_B_15Ctx" id="TextArea_B_15Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="RichTextEditor_B_12Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="TextArea_B_15.jsp" id="TextArea_B_15">
+			<transitions>
+				<htmlTransition id="TextArea_B_15.nextCase" targetState="OK"/>
+				<htmlTransition id="TextArea_B_15.reload" targetState="TextArea_B_15"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="RichTextEditor_B_12Op" id="RichTextEditor_B_12Op" type="operation">
+			<transitions>
+				<htmlTransition id="RichTextEditor_B_12Op.initial" outputMapFmt="RichTextEditor_B_12Op.initial_OutputFmt" targetState="TextArea_B_15"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="TextArea_B_15Ctx" type="op">
+		<refKColl refId="TextArea_B_15Record"/>
+	</context>
+
+	<kColl id="TextArea_B_15Record">
+		<field id="TextArea_B_15Field"/>
+	</kColl>
+
+	<fmtDef id="RichTextEditor_B_12Op.initial_OutputFmt">
+		<mapperConverterExpression>
+			<map from="RichTextEditor_B_12Field" to="TextArea_B_15Field"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</TextArea_B_15Flow>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPane_B_23Flow>
+
+
+	<htmlProcessor context="TabbedPane_B_23Ctx" id="TabbedPane_B_23Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="TabbedPane_B_23"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="TabbedPane_B_23.jsp" id="TabbedPane_B_23">
+			<transitions>
+				<htmlTransition id="TabbedPane_B_23.reload" targetState="TabbedPane_B_23"/>
+				<htmlTransition id="TabbedPane_B_23.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="TabbedPane_B_23Ctx" type="op">
+		<refKColl refId="TabbedPane_B_23Record"/>
+	</context>
+
+	<kColl id="TabbedPane_B_23Record">
+		<field id="TabbedPaneField"/>
+	</kColl>
+
+</TabbedPane_B_23Flow>

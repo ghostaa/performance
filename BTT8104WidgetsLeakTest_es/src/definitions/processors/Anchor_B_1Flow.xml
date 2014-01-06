@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Anchor_B_1Flow>
+
+
+	<htmlProcessor context="Anchor_B_1Ctx" id="Anchor_B_1Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Anchor_B_1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Anchor_B_1.jsp" id="Anchor_B_1">
+			<transitions>
+				<htmlTransition id="Anchor_B_1.nextCase" targetState="OK"/>
+				<htmlTransition id="Anchor_B_1.reload" targetState="Anchor_B_1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="Anchor_B_1Ctx" type="op">
+		<refKColl refId="Anchor_B_1Record"/>
+	</context>
+
+	<kColl id="Anchor_B_1Record">
+	</kColl>
+
+</Anchor_B_1Flow>

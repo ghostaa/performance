@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="57,47,658,310" dataBinding="{'ctxType':'proc','ctxFile':'Anchor_B_1Flow','ctxName':'Anchor_B_1Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'Anchor_B_1.js'}">
+  <styles/>
+  <container name="Form" id="cfrm">
+    <gridData heightHint="310" verticalAlignment="1" widthHint="658" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Link" id="link" text="%nls.bttsample/text of link">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" action="flowEvent=reload" id="btn_reload" text="Click to Reload page Anchor BTT Case1">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" id="button" buttonType="button" text="ECA Button">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="link">
+          <function name="focus"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="link" event="onFocus"/>
+      </events>
+      <condition>
+        <value type="expression">
+          <leftValue type="constant" constant="'1'"/>
+          <operator name="=="/>
+          <rightValue type="constant" constant="'1'"/>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="link" property="text">
+          <value type="constant" constant="'this is link ECA'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

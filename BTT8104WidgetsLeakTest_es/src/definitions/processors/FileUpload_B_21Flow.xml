@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FileUpload_B_21Flow>
+
+
+	<htmlProcessor context="FileUpload_B_21Ctx" id="FileUpload_B_21Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="FileUpload_B_21"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" type="final" finalPage="finalPage.jsp" id="OK"/>
+
+		<htmlState type="page" typeIdInfo="FileUpload_B_21.jsp" id="FileUpload_B_21">
+			<transitions>
+				<htmlTransition id="FileUpload_B_21.reload" targetState="FileUpload_B_21"/>
+				<htmlTransition id="FileUpload_B_21.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="FileUpload_B_21Ctx" type="op">
+		<refKColl refId="FileUpload_B_21Record"/>
+	</context>
+
+	<kColl id="userFiles">
+		<iColl id="receivedFiles">
+			<refData refId="file"/>
+		</iColl>
+		<refData refId="file"/>
+		<field id="handler" value="sampleFileHandler"/>
+	</kColl>
+
+	<kColl id="file">
+		<field id="name"/>
+		<field id="size"/>
+		<field id="fileId"/>
+	</kColl>
+
+	<kColl id="FileUpload_B_21Record">
+		<refData refId="userFiles"/>
+	</kColl>
+
+</FileUpload_B_21Flow>

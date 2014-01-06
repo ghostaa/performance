@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CheckBox_B_2Flow>
+
+
+	<htmlProcessor context="CheckBox_B_2Ctx" id="CheckBox_B_2Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="CheckBox_B_2"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="CheckBox_B_2.jsp" id="CheckBox_B_2">
+			<transitions>
+				<htmlTransition id="CheckBox_B_2.nextCase" targetState="OK"/>
+				<htmlTransition id="CheckBox_B_2.reload" targetState="CheckBox_B_2"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="CheckBox_B_2Ctx" type="op">
+		<refKColl refId="CheckBox_B_2Record"/>
+	</context>
+
+	<kColl id="CheckBox_B_2Record">
+		<data id="CheckBox_B_2Data" refType="String"/>
+	</kColl>
+
+</CheckBox_B_2Flow>

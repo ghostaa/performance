@@ -1,0 +1,198 @@
+/* 
+ *------------------------------------------------------------------- 
+ * Licensed Materials - Property of IBM
+ * Restricted Materials of IBM
+ * 5724-H82
+ * (C) Copyright IBM Corp.2010 All Rights Reserved.
+ * US Government Users Restricted Rights - Use, duplication or disclosure
+ * restricted by GSA ADP Schedule Contract with IBM Corp
+ -------------------------------------------------------------------
+ */
+.fileupload_pane{
+	padding:0px;
+	vertical-align:top;
+}
+.tundra .inputBox{
+	border:1px solid #B3B3B3 !important;
+	background: #FFFFFF url(../../../../../dijit/themes/tundra/images/validationInputBg.png) repeat-x scroll left top !important;
+}
+
+.tundra .errInputBox{
+	border-color : #406B9B !important;
+	background: #F9F999 !important;
+}
+.dj_ie7 .claro .commonButton{
+	position: relative;
+	top: -3px;
+}
+.dj_ie6 .claro .commonButton{
+	position: relative;
+	top: -3px;
+}
+.dj_ie7 .tundra .commonButton{
+	position: relative;
+	top: -3px;
+}
+.dj_ie6 .tundra .commonButton{
+	position: relative;
+	top: -3px;
+}
+
+.dj_ie6 .inputBox{
+	position: relative;
+	top:-2px;
+}
+.dj_ie7 .inputBox{
+	position: relative;
+	top:-2px;
+}
+.claro .inputBox{
+	border:1px solid #B5BCC7 !important;
+	background: #F7FCFF !important;
+}
+
+.claro .errInputBox{
+	border-color : #D46464 !important;
+	background: #FDF7F7 !important;
+}
+.errorMsg{
+	color:red;
+	font-size: 12px;
+	display : block;
+}
+
+.loadingMsg{
+	font-size: 12px;
+}
+
+.uploadHover{
+    background-image:url(../../../../../dijit/themes/tundra/images/buttonHover.png);
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.tundra .dojoxUploaderNorm{
+	border: 1px solid #c0c0c0; 
+	border-bottom: 1px solid #9b9b9b; 
+	padding: 0.2em 0.25em 0.25em 0.25em; 
+	background: #fff url(../../../../../dijit/themes/tundra/images/buttonEnabled.png) repeat-x bottom left;
+	margin:0;
+	line-height:normal;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.claro .dojoxUploaderNorm {
+	border: 1px solid #769dc0;
+	padding:3px 5px 5px 5px;
+	background-image: url(../../../../../dijit/themes/claro/form/images/button.png);
+	background-position: center top;
+	background-repeat: repeat-x;
+	background-color: #e4f2ff;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	box-shadow:0px 1px 1px rgba(0,0,0,0.15);
+	-webkit-box-shadow:0px 1px 1px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.15);	
+}
+
+.tundra .dojoxUploaderHover{
+	border-color:#a5beda; 
+	border-bottom-color:#5c7590; 
+	color:#243C5F;
+	background:#fcfdff url(../../../../../dijit/themes/tundra/images/buttonHover.png) repeat-x bottom;
+}
+.tundra .dojoxUploaderActive{
+	border-color:#366dba;
+	background: #ededed url(../../../../../dijit/themes/tundra/images/buttonActive.png) bottom repeat-x;
+}
+.tundra .dojoxUploaderDisabled{
+	color: #7F7F7F;
+	border-color: #d5d5d5 #d5d5d5 #bdbdbd #d5d5d5; 
+	background:#e4e4e4 url(../../../../../dijit/themes/tundra/images/buttonDisabled.png) repeat-x top;
+}
+
+.claro .dojoxUploaderHover{
+	background-color: #afd9ff;
+	color:#000;
+ 	-webkit-transition-duration:.2s;
+}
+.claro .dojoxUploaderActive{
+	background-color: #99cfff;
+	box-shadow:0px 0px 0px rgba(0,0,0,0);
+	-webkit-box-shadow:0px 0px 0px rgba(0,0,0,0);
+	-moz-box-shadow: 0px 0px 0px rgba(0,0,0,0);
+ 	-webkit-transition-duration:.1s;
+}
+.claro .dojoxUploaderDisabled{
+	-moz-box-shadow: 0 0 0 transparent;
+	background-color: #E3E3E3;
+	border:1px solid #C9C9C9;
+	background-position:0 -149px;
+}
+.claro .dojoxUploaderDisabled .uploaderInsideNode{
+	color: #7F7F7F;
+}
+
+.dj_ie .claro .dojoxUploaderNorm {
+	border: 1px solid #769dc0;
+	padding:2px 5px 5px 5px;
+	background-image: url(../../../../../dijit/themes/claro/form/images/button.png);
+	background-position: center top;
+	background-repeat: repeat-x;
+	background-color: #e4f2ff;
+}
+.dj_ie .claro .dojoxUploaderHover{
+	background-color: #afd9ff;
+	color:#000;
+}
+
+.dj_ie6 .claro .dojoxUploaderNorm {
+	background-image: none;
+}
+.dj_ie .claro .dojoxUploaderActive{
+	background-color: #99cfff;
+}
+.dj_ie .claro .dojoxUploaderDisabled{
+	background-color: #E3E3E3;
+	border:1px solid #C9C9C9;
+	background-position:0 -149px;
+	
+}
+
+.dj_ie6 .claro .dojoxUploaderDisabled{
+	top:3px;
+	vertical-align:bottom;
+}
+
+.dj_ie7 .claro .dojoxUploaderDisabled{
+	top:3px;
+	vertical-align:bottom;
+}
+
+.dj_ie .tundra .dojoxUploaderNorm{
+	border: 1px solid #c0c0c0; 
+	border-bottom: 1px solid #9b9b9b; 
+	padding: 0.25em 0.45em 0.45em 0.45em; 
+	background: #e0e0e0 url(../../../../../dijit/themes/tundra/images/buttonEnabled.png) repeat-x top;
+	font-family : Arial;
+	font-size: 80%;
+	
+}
+.dj_ie .tundra .dojoxUploaderHover{
+	border-color:#a5beda; 
+	border-bottom-color:#5c7590; 
+	background: #a5beda url(../../../../../dijit/themes/tundra/images/buttonHover.png) repeat-x top;
+}
+.dj_ie .tundra .dojoxUploaderActive{
+	border-color:#366dba;
+	background: #ffffff url(../../../../../dijit/themes/tundra/images/buttonActive.png) repeat-x top;
+}
+.dj_ie .tundra .dojoxUploaderDisabled{
+	color: #7F7F7F;
+	border-color: #d5d5d5 #d5d5d5 #bdbdbd #d5d5d5; 
+	background:#e4e4e4 url(../../../../../dijit/themes/tundra/images/buttonDisabled.png) repeat-x top;
+}
+
+

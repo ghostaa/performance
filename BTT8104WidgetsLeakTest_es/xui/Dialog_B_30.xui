@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="57,47,486,161" dataBinding="{'ctxType':'proc','ctxFile':'ContentPane_B_24Flow','ctxName':'ContentPane_B_24Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'Dialog_B_30.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="161" verticalAlignment="1" widthHint="486" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData horizontalSpan="2" widthHint="486" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form01">
+        <gridData heightHint="44" verticalAlignment="1" widthHint="420" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowId=Dialog_B_30Flow;flowEvent=start" id="btn_reload" text="B30_Dialog">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="2"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

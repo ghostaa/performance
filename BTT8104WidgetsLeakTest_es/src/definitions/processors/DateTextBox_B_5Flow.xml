@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DateTextBox_B_5Flow>
+
+
+	<htmlProcessor context="DateTextBox_B_5Ctx" id="DateTextBox_B_5Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="DateTextBox_B_5"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="DateTextBox_B_5.jsp" id="DateTextBox_B_5">
+			<transitions>
+				<htmlTransition id="DateTextBox_B_5.nextCase" targetState="OK"/>
+				<htmlTransition id="DateTextBox_B_5.reload" targetState="DateTextBox_B_5"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="DateTextBox_B_5Ctx" type="op">
+		<refKColl refId="DateTextBox_B_5Record"/>
+	</context>
+
+	<kColl id="DateTextBox_B_5Record">
+		<data id="DateTextBox_B_5Data" value="2013-01-01" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+	</kColl>
+
+</DateTextBox_B_5Flow>

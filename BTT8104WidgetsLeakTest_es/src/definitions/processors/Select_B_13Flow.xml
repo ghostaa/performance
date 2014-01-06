@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Select_B_13Flow>
+
+
+	<htmlProcessor context="Select_B_13Ctx" id="Select_B_13Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Select_B_13"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Select_B_13.jsp" id="Select_B_13">
+			<transitions>
+				<htmlTransition id="Select_B_13.nextCase" targetState="OK"/>
+				<htmlTransition id="Select_B_13.reload" targetState="Select_B_13"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Select_B_13Ctx" type="op">
+		<refKColl refId="Select_B_13Record"/>
+	</context>
+
+	<kColl id="Select_B_13Record">
+		<iColl id="Select_B_13List">
+			<kColl id="Select_B_13Record01">
+				<field id="Select_B_13Field"/>
+				<field id="Select_B_13Field01"/>
+				<field id="Select_B_13Field02"/>
+				<field id="Select_B_13Field03"/>
+				<field id="Select_B_13Field04"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</Select_B_13Flow>

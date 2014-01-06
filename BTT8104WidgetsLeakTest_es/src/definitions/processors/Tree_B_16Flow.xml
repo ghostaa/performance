@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tree_B_16Flow>
+
+
+	<htmlProcessor context="Tree_B_16Ctx" id="Tree_B_16Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Tree_B_16"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Tree_B_16.jsp" id="Tree_B_16">
+			<transitions>
+				<htmlTransition id="Tree_B_16.nextCase" targetState="OK"/>
+				<htmlTransition id="Tree_B_16.reload" targetState="Tree_B_16"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Tree_B_16Ctx" type="op">
+		<refKColl refId="Tree_B_16Record"/>
+	</context>
+
+	<kColl id="Tree_B_16Record">
+		<treeModel id="root" label="root">
+			<treeModel id="1" label="1" value="A">
+				<treeModel id="11" label="1.1" value="D">
+				</treeModel>
+				<treeModel id="12" label="1.2" value="E">
+				</treeModel>
+				<treeModel id="13" label="1.3">
+				</treeModel>
+			</treeModel>
+			<treeModel id="2" label="2" value="B">
+				<treeModel id="21" label="2.1">
+				</treeModel>
+				<treeModel id="22" label="2.2">
+				</treeModel>
+				<treeModel id="23" label="2.3">
+				</treeModel>
+			</treeModel>
+			<treeModel id="3" label="3" value="C">
+				<treeModel id="31" label="3.1">
+				</treeModel>
+				<treeModel id="32" label="3.2">
+				</treeModel>
+				<treeModel id="33" label="3.3">
+				</treeModel>
+			</treeModel>
+		</treeModel>
+		<field id="Tree_B_16Field"/>
+		<treeModel id="Tree_B_16TreeModel">
+		</treeModel>
+	</kColl>
+
+</Tree_B_16Flow>

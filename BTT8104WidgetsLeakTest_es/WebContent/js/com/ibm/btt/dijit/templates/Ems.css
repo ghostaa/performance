@@ -1,0 +1,74 @@
+/*
+**----------------------------------------------------------------------------
+**  BTTMultiSelect
+**----------------------------------------------------------------------------
+*/
+
+.bttMultiSelectReadOnly > option{
+	color: gray;
+	background-color: white;
+}
+
+.bttMultiSelectReadOnly > option:checked{
+	color: white;
+	background-color: #3399FF;
+}
+
+.bttMultiSelectDisabled > option{
+	background-color: #ECECEC;
+}
+
+.bttMultiSelectDisabled > option:checked{
+	color: white;
+	background-color: #3399FF;
+}
+
+/*
+**----------------------------------------------------------------------------
+**  EnhancedMultiSelect
+**----------------------------------------------------------------------------
+*/
+.enhancedMultiSelect {
+}
+
+.enhancedMultiSelectLabel {
+	display: inline-block;
+	border: 1px solid silver;
+	padding: 2px;
+	margin-bottom: 5px;
+	cursor: default;
+}
+
+.enhancedMultiSelectSelAll {
+	display: inline-block;
+	border: 1px solid gray;
+	padding: 2px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+
+.enhancedMultiSelectUnSel {
+	display: inline-block;
+	border: 1px solid gray;
+	padding: 2px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+
+.enhancedMultiSelectInvert {
+	display: inline-block;
+	border: 1px solid gray;
+	padding: 2px;
+	margin-bottom: 5px;
+}
+
+.enhancedMultiSelectButton span:HOVER {
+	cursor: pointer;
+	color : blue;
+	border-color: silver;
+}
+
+.enhancedMultiSelectButtonDisabled {
+	color : gray;
+	cursor : default;
+}

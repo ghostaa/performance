@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="57,47,658,310" dataBinding="{'ctxType':'proc','ctxFile':'Group_B_22Flow','ctxName':'Group_B_22Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'Group_B_22.js'}">
+  <styles/>
+  <container name="Form" id="cfrm">
+    <gridData heightHint="310" verticalAlignment="1" widthHint="658" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Group" id="group" text="Group">
+        <gridData heightHint="94" verticalAlignment="1" widthHint="214" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <gridLayout numColumns="0"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" action="flowEvent=reload" id="btn_reload" text="B22_Group">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" id="button" buttonType="button" text="Button">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="group" property="styleClass">
+          <value type="constant" constant="'str'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

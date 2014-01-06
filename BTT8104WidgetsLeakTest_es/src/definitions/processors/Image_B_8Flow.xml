@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Image_B_8Flow>
+
+
+	<htmlProcessor context="Image_B_8Ctx" id="Image_B_8Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Image_B_8"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Image_B_8.jsp" id="Image_B_8">
+			<transitions>
+				<htmlTransition id="Image_B_8.nextCase" targetState="OK"/>
+				<htmlTransition id="Image_B_8.reload" targetState="Image_B_8"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Image_B_8Ctx" type="op">
+		<refKColl refId="Image_B_8Record"/>
+	</context>
+
+	<kColl id="Image_B_8Record">
+		<field id="Image_locationPath" value="img\Fish03.jpg"/>
+	</kColl>
+
+</Image_B_8Flow>

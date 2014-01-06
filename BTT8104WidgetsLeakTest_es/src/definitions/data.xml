@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+
+	<!--Data collection for the branch context-->
+	<kColl id="branchData" dynamic="true">
+		<field id="BranchId"/>
+	</kColl>
+
+	<kColl id="sessionData" dynamic="true">
+	</kColl>
+
+	<kColl id="AccountInfoRecord">
+		<data id="d1" refType="String"/>
+		<data id="d2" refType="String"/>
+		<data id="d3" refType="String"/>
+	</kColl>
+
+	<iColl id="AccountInfoList" size="10">
+		<refData refId="AccountInfoRecord" lazy="false"/>
+	</iColl>
+
+</data.xml>

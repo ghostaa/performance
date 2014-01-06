@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StringTextBox_B_14Flow>
+
+
+	<htmlProcessor context="StringTextBox_B_14Ctx" id="StringTextBox_B_14Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="StringTextBox_B_14"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="StringTextBox_B_14.jsp" id="StringTextBox_B_14">
+			<transitions>
+				<htmlTransition id="StringTextBox_B_14.nextCase" targetState="OK"/>
+				<htmlTransition id="StringTextBox_B_14.reload" targetState="StringTextBox_B_14"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="StringTextBox_B_14Ctx" type="op">
+		<refKColl refId="StringTextBox_B_14Record"/>
+	</context>
+
+	<kColl id="StringTextBox_B_14Record">
+		<data id="StringTextBox_B_14Data" value="default value of StringTextBox" refType="String">
+			<param value="1" id="minimumLength"/>
+			<param value="30" id="maximumLength"/>
+		</data>
+	</kColl>
+
+</StringTextBox_B_14Flow>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sampleFlow>
+
+
+	<htmlProcessor context="sampleFlowCtx" id="sampleFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+	</htmlProcessor>
+
+	<context id="sampleFlowCtx" type="op" parent="sessionCtx">
+		<refKColl refId="sampleFlowKColl"/>
+	</context>
+
+	<kColl id="sampleFlowKColl" dynamic="true">
+	</kColl>
+
+</sampleFlow>

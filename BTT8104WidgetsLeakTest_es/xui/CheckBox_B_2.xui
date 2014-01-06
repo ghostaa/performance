@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="57,47,658,310" dataBinding="{'ctxType':'proc','ctxFile':'CheckBox_B_2Flow','ctxName':'CheckBox_B_2Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'CheckBox_B_2.js'}">
+  <styles/>
+  <container name="Form" id="cfrm">
+    <gridData heightHint="310" verticalAlignment="1" widthHint="658" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="CheckBox" dataName="{'ctxType':'proc','ctxFile':'CheckBox_B_2Flow','ctxName':'CheckBox_B_2Ctx','dataName':'CheckBox_B_2Data'}" id="checkBox" text="%nls.bttsample/text of CheckBox">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" action="flowEvent=reload" id="btn_reload" text="Click to Reload current page CheckBox BTT Case2">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" id="Button01" buttonType="button" text="Button">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="Button01" event="onClick"/>
+      </events>
+      <condition>
+        <value type="widgetProperty" widget="checkBox" property="isChecked"/>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="checkBox" property="isChecked">
+          <value type="constant" constant="false"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetProperty" widget="checkBox" property="isChecked">
+          <value type="constant" constant="true"/>
+        </action>
+      </falseActions>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="checkBox" event="onChange"/>
+      </events>
+      <condition>
+        <value type="widgetProperty" widget="checkBox" property="isChecked"/>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="checkBox" property="text">
+          <value type="constant" constant="'checkbox true'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetProperty" widget="checkBox" property="text">
+          <value type="constant" constant="'checkbox true'"/>
+        </action>
+      </falseActions>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

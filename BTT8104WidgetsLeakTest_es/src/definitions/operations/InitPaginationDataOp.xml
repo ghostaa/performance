@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InitPaginationDataOp>
+
+	<operation id="InitPaginationDataOp" context="InitPaginationDataCtx" implClass="com.ibm.btt.application.op.InitPaginationData"/>
+
+	<context id="InitPaginationDataCtx" type="op">
+		<refKColl refId="InitPaginationDataRecord"/>
+	</context>
+
+	<kColl id="InitPaginationDataRecord">
+		<refData refId="AccountInfoList"/>
+		<iColl id="AllAccountList" size="35">
+			<refData refId="AccountInfoRecord" lazy="false"/>
+		</iColl>
+		<data id="TotalNum" refType="Integer"/>
+	</kColl>
+
+</InitPaginationDataOp>

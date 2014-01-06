@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Button_B_7Flow>
+
+
+	<htmlProcessor context="Button_B_7Ctx" id="Button_B_7Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Button_B_7"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Button_B_7.jsp" id="Button_B_7">
+			<transitions>
+				<htmlTransition id="Button_B_7.nextCase" targetState="OK"/>
+				<htmlTransition id="Button_B_7.reload" targetState="Button_B_7"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Button_B_7Ctx" type="op">
+		<refKColl refId="Button_B_7Record"/>
+	</context>
+
+	<kColl id="Button_B_7Record">
+		<field id="Button_B_7Field"/>
+	</kColl>
+
+</Button_B_7Flow>

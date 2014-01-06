@@ -1,0 +1,26 @@
+.buttonTextVerticalAlignTop {
+}
+
+
+.buttonTextVerticalAlignTop .dijitButtonNode{
+		display:table-cell;
+		vertical-align:top;
+}
+
+.buttonTextVerticalAlignBottom {
+}
+
+
+.buttonTextVerticalAlignBottom .dijitButtonNode{
+		display:table-cell;
+		vertical-align:bottom;
+}
+
+.buttonTextVerticalAlignMiddle {
+}
+
+
+.buttonTextVerticalAlignMiddle .dijitButtonNode{
+		display:table-cell;
+		vertical-align:middle;
+}

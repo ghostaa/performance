@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RadioButton_B_11Flow>
+
+
+	<htmlProcessor context="RadioButton_B_11Ctx" id="RadioButton_B_11Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="RadioButton_B_11"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="RadioButton_B_11.jsp" id="RadioButton_B_11">
+			<transitions>
+				<htmlTransition id="RadioButton_B_11.nextCase" targetState="OK"/>
+				<htmlTransition id="RadioButton_B_11.reload" targetState="RadioButton_B_11"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="RadioButton_B_11Ctx" type="op">
+		<refKColl refId="RadioButton_B_11Record"/>
+	</context>
+
+	<kColl id="RadioButton_B_11Record">
+		<data id="RadioButton_B_11Data" refType="Boolean"/>
+	</kColl>
+
+</RadioButton_B_11Flow>

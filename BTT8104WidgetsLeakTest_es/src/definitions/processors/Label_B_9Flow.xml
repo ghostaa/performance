@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Label_B_9Flow>
+
+
+	<htmlProcessor context="Label_B_9Ctx" id="Label_B_9Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Label_B_9"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Label_B_9.jsp" id="Label_B_9">
+			<transitions>
+				<htmlTransition id="Label_B_9.nextCase" targetState="OK"/>
+				<htmlTransition id="Label_B_9.reload" targetState="Label_B_9"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Label_B_9Ctx" type="op">
+		<refKColl refId="Label_B_9Record"/>
+	</context>
+
+	<kColl id="Label_B_9Record">
+		<field id="Label_B_9Field" value="this is the field value defined in context data"/>
+	</kColl>
+
+</Label_B_9Flow>

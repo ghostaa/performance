@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CurrencyTextBox_B_4Flow>
+
+
+	<htmlProcessor context="CurrencyTextBox_B_4Ctx" id="CurrencyTextBox_B_4Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="CurrencyTextBox_B_4"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="CurrencyTextBox_B_4.jsp" id="CurrencyTextBox_B_4">
+			<transitions>
+				<htmlTransition id="CurrencyTextBox_B_4.nextCase" targetState="OK"/>
+				<htmlTransition id="CurrencyTextBox_B_4.reload" targetState="CurrencyTextBox_B_4"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="CurrencyTextBox_B_4Ctx" type="op">
+		<refKColl refId="CurrencyTextBox_B_4Record"/>
+	</context>
+
+	<kColl id="CurrencyTextBox_B_4Record">
+		<data id="CurrencyTextBox_B_4Data" value="987654321" refType="Currency"/>
+	</kColl>
+
+</CurrencyTextBox_B_4Flow>

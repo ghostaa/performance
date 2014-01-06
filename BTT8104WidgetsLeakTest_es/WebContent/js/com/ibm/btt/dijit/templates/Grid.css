@@ -1,0 +1,45 @@
+.dojoxGridErroressages {
+	position: relative;
+	padding: 2px;
+	color: red;
+	text-align: center;
+	background-color: #D0E8FF;
+	margin-left: 2px;
+	margin-right: 1px;
+	border-color: transparent #E5DAC8 #E5DAC8 transparent;
+	border-style: none none solid none;
+	border-width: 0px 1px 1px 0px;
+}
+
+.errorMessageIcon {
+	background-color: #D46464;
+	background-image: url("../images/error.png");
+	background-position: center top;
+	border-color: #D46464;
+	border-style: solid;
+	border-width: 1px;
+	width: 13px;
+	height: 17px;
+	float: right;
+	cursor: pointer;
+	z-index:9999;
+}
+
+.disabledGrid {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: 99;
+    display: block;
+    opacity: 0.7;
+    filter: alpha(opacity:70);
+    background: #F0F0F0;
+}
+
+
+.dojoxGridNumBtnDisabled {
+    color: #BCBCBC;
+    float: left;
+    font-weight: normal;
+    margin: 1px 6px 0 5px;
+    text-decoration: none !important;
+}

@@ -1,0 +1,42 @@
+.hScrollbarScroll {
+}
+
+.hScrollbarScroll .dojoxGridScrollbox{
+		overflow-x:scroll;
+}
+
+.hScrollbarHidden {
+}
+
+.hScrollbarHidden .dojoxGridScrollbox{
+		overflow-x:hidden;
+}
+
+.hScrollbarAuto {
+}
+
+.hScrollbarAuto .dojoxGridScrollbox{
+		overflow-x:auto;
+}
+
+.vScrollbarScroll {
+}
+
+.vScrollbarScroll .dojoxGridScrollbox{
+		overflow-y:scroll;
+}
+
+.vScrollbarHidden {
+}
+
+.vScrollbarHidden .dojoxGridScrollbox{
+		overflow-y:hidden;
+}
+
+.vScrollbarAuto {
+}
+
+.vScrollbarAuto .dojoxGridScrollbox{
+		overflow-y:auto;
+}
+

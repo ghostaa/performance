@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RichTextEditor_B_12Op>
+
+	<operation id="RichTextEditor_B_12Op" context="RichTextEditor_B_12Ctx" implClass="com.ibm.btt.application.op.RichTextEditor_Initial"/>
+
+	<context id="RichTextEditor_B_12Ctx" type="op">
+		<refKColl refId="RichTextEditor_B_12Record"/>
+	</context>
+
+	<kColl id="RichTextEditor_B_12Record">
+		<field id="RichTextEditor_B_12Field"/>
+	</kColl>
+
+</RichTextEditor_B_12Op>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GridDijit_B_18Op>
+
+	<operation id="GridDijit_B_18Op" context="GridDijit_B_18OpCtx" implClass="com.ibm.btt.application.op.AddTableData"/>
+
+	<context id="GridDijit_B_18OpCtx" type="op">
+		<refKColl refId="GridDijit_B_19RecordOp"/>
+	</context>
+
+	<kColl id="GridDijit_B_19RecordOp">
+		<field id="Grid_B_19Field"/>
+		<iColl id="TableList">
+			<refData refId="tableRecord" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="tableRecord">
+		<data id="d1" refType="String"/>
+		<data id="d2" refType="String"/>
+		<data id="d3" refType="String"/>
+	</kColl>
+
+</GridDijit_B_18Op>

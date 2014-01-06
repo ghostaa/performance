@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="57,47,466,333" dataBinding="{'ctxType':'proc','ctxFile':'FormValidationMixin_B_29Flow','ctxName':'FormValidationMixin_B_29Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'FormValidationMixin_B_29.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="333" verticalAlignment="1" widthHint="466" heightType="FixedSize" widthType="FixedSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData horizontalSpan="2" widthHint="486" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form01">
+        <gridData heightHint="44" verticalAlignment="1" widthHint="420" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Text" dataName="FormValidationMixin_B_29Field" id="text" isMandatory="true">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=reload" id="btn_reload" text="B29_FormValidationMixin">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+        <validations>
+          <validation name="xValidation" widgetID="form01" failCondition="true">
+            <hint>FormXValidation promt</hint>
+            <condition>
+              <value type="widgetProperty" widget="btn_reload" property="disabled"/>
+            </condition>
+          </validation>
+        </validations>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="2"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

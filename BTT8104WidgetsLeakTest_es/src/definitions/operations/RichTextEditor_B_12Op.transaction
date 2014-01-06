@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_0dcrwJH5EeKSwIY3Jt3HEA">
+  <context xmi:type="transaction:ContextCategory" xmi:id="_0dcrwpH5EeKSwIY3Jt3HEA">
+    <contexts xmi:type="transaction:Context" xmi:id="_1r-7cJH5EeKSwIY3Jt3HEA" tag="context" id="RichTextEditor_B_12Ctx">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_1r-7cZH5EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_1r-7cpH5EeKSwIY3Jt3HEA" name="type" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_1r-7c5H5EeKSwIY3Jt3HEA" name="addToDynamicKColl" type="java.lang.Boolean"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_1r-7dJH5EeKSwIY3Jt3HEA" name="parent" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_1r-7dZH5EeKSwIY3Jt3HEA" key="_1r-7cpH5EeKSwIY3Jt3HEA" value="op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_1r-7dpH5EeKSwIY3Jt3HEA" key="_1r-7cZH5EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Ctx"/>
+      <refElement xmi:type="transaction:RefKColl" xmi:id="_qfHk8JH6EeKSwIY3Jt3HEA" tag="refKColl">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qfHk8ZH6EeKSwIY3Jt3HEA" name="refId" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_q1BjgJH6EeKSwIY3Jt3HEA" key="_qfHk8ZH6EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Record"/>
+      </refElement>
+    </contexts>
+  </context>
+  <data xmi:type="transaction:DataCategory" xmi:id="_0dcrw5H5EeKSwIY3Jt3HEA">
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_pbBDoJH6EeKSwIY3Jt3HEA" tag="kColl" id="RichTextEditor_B_12Record">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_pbBDoZH6EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_pbBDopH6EeKSwIY3Jt3HEA" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_pbBDo5H6EeKSwIY3Jt3HEA" name="direction" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_pbBDpJH6EeKSwIY3Jt3HEA" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_pbBDpZH6EeKSwIY3Jt3HEA" key="_pbBDo5H6EeKSwIY3Jt3HEA" value="both"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_pbBDppH6EeKSwIY3Jt3HEA" key="_pbBDoZH6EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Record"/>
+      <elements xmi:type="transaction:DataField" xmi:id="_pvllcJH6EeKSwIY3Jt3HEA" tag="field" id="RichTextEditor_B_12Field">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_pvllcZH6EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_pvllcpH6EeKSwIY3Jt3HEA" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_pvllc5H6EeKSwIY3Jt3HEA" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_pvlldJH6EeKSwIY3Jt3HEA" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_pvlldZH6EeKSwIY3Jt3HEA" key="_pvllc5H6EeKSwIY3Jt3HEA" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_pvlldpH6EeKSwIY3Jt3HEA" key="_pvllcZH6EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Field"/>
+      </elements>
+    </dataElements>
+  </data>
+  <format xmi:type="transaction:FormatCategory" xmi:id="_0dcrxJH5EeKSwIY3Jt3HEA"/>
+  <operation xmi:type="transaction:OperationCategory" xmi:id="_0dcrxZH5EeKSwIY3Jt3HEA">
+    <operations xmi:type="transaction:Operation" xmi:id="_YTyc8JH6EeKSwIY3Jt3HEA" tag="operation" id="RichTextEditor_B_12Op">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_YTyc8ZH6EeKSwIY3Jt3HEA" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_YTyc8pH6EeKSwIY3Jt3HEA" name="context" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_YTyc85H6EeKSwIY3Jt3HEA" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_YTyc9JH6EeKSwIY3Jt3HEA" name="xVal" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YTyc9ZH6EeKSwIY3Jt3HEA" key="_YTyc85H6EeKSwIY3Jt3HEA" value="com.ibm.btt.application.op.RichTextEditor_Initial"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YTyc9pH6EeKSwIY3Jt3HEA" key="_YTyc8ZH6EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_noR6sJH6EeKSwIY3Jt3HEA" key="_YTyc8pH6EeKSwIY3Jt3HEA" value="RichTextEditor_B_12Ctx"/>
+    </operations>
+  </operation>
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_0dcrxpH5EeKSwIY3Jt3HEA"/>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_0dcrx5H5EeKSwIY3Jt3HEA"/>
+</transaction:WorkProduct>

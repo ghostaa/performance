@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgetsTestCasesFlow>
+
+
+	<htmlProcessor context="ctxwidgetsTestCasesFlow" id="widgetsTestCasesFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="TextBox_B_1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="TextBox_B_1.jsp" id="TextBox_B_1">
+			<transitions>
+				<htmlTransition id="TextBox_B_1.reload" targetState="TextBox_B_1"/>
+				<htmlTransition id="TextBox_B_1.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="ctxwidgetsTestCasesFlow" type="op" parent="sessionCtx">
+		<refKColl refId="RootData"/>
+	</context>
+
+	<kColl id="RootData" dynamic="true">
+		<data id="textBox_data1" value="This is a TextBox" refType="String"/>
+	</kColl>
+
+</widgetsTestCasesFlow>

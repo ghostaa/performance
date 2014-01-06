@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="57,47,465,270" dataBinding="{'ctxType':'proc','ctxFile':'GridDijit_B_18Flow','ctxName':'GridDijit_B_18Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'GridDijit_B_18.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="270" verticalAlignment="1" widthHint="465" heightType="FixedSize" widthType="FixedSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData horizontalSpan="2" widthHint="486" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form01">
+        <gridData heightHint="44" verticalAlignment="1" widthHint="420" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Table" dataNameForList="TableList" dataName="TableList" id="table">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="column0" noresize="false" dataName="d1" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="column1" noresize="false" dataName="d2" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="column2" noresize="false" dataName="d3" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=reload" id="btn_reload" text="B18_GridDijit">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button" buttonType="button" text="Button">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="2"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="hideColumn">
+            <parameter>
+              <value type="constant" constant="'columnId1'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="table" event="onBlur"/>
+      </events>
+      <condition>
+        <value type="widgetFunction" widget="table">
+          <function name="isFocusable"/>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="showColumn">
+            <parameter>
+              <value type="constant" constant="'columnId1'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="hideColumn">
+            <parameter>
+              <value type="constant" constant="'columnId1'"/>
+            </parameter>
+          </function>
+        </action>
+      </falseActions>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

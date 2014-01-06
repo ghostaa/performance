@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="57,47,951,712" dataBinding="{'ctxType':'proc','ctxFile':'TabbedPane_B_23Flow','ctxName':'TabbedPane_B_23Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'TabbedPane_B_23.js'}">
+  <styles/>
+  <container name="Form" id="cfrm">
+    <gridData heightHint="712" verticalAlignment="1" widthHint="951" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="TabbedPane" id="tabbedPane">
+        <gridData heightHint="177" verticalAlignment="1" widthHint="423" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <container name="ContentPane" title="Tab01" id="ContentPane01">
+          <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </container>
+        <container name="ContentPane" title="Tab02" id="ContentPane02">
+          <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </container>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" action="flowEvent=reload" id="btn_reload" text="B23_TabbedPane">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" id="button" buttonType="button" text="Button">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="tabbedPane">
+          <function name="selectChildByIndex">
+            <parameter>
+              <value type="constant" constant="1"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="ContentPane01" event="onShow"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="ContentPane01" property="title">
+          <value type="constant" constant="'str'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="ContentPane02" event="onShow"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="ContentPane01" property="title">
+          <value type="constant" constant="'str'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

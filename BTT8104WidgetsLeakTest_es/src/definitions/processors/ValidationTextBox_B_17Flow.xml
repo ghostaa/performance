@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationTextBox_B_17Flow>
+
+
+	<htmlProcessor context="ValidationTextBox_B_17Ctx" id="ValidationTextBox_B_17Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="ValidationTextBox_B_17"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="ValidationTextBox_B_17.jsp" id="ValidationTextBox_B_17">
+			<transitions>
+				<htmlTransition id="ValidationTextBox_B_17.reload" targetState="ValidationTextBox_B_17"/>
+				<htmlTransition id="ValidationTextBox_B_17.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="ValidationTextBox_B_17Ctx" type="op">
+		<refKColl refId="ValidationTextBox_B_17Record"/>
+	</context>
+
+	<kColl id="ValidationTextBox_B_17Record">
+		<field id="ValidationField"/>
+		<data id="ValidationData" value="123" refType="Number"/>
+	</kColl>
+
+</ValidationTextBox_B_17Flow>

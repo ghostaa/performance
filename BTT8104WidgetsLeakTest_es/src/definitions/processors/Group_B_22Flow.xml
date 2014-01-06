@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Group_B_22Flow>
+
+
+	<htmlProcessor context="Group_B_22Ctx" id="Group_B_22Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Group_B_22"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Group_B_22.jsp" id="Group_B_22">
+			<transitions>
+				<htmlTransition id="Group_B_22.reload" targetState="Group_B_22"/>
+				<htmlTransition id="Group_B_22.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Group_B_22Ctx" type="op">
+		<refKColl refId="Group_B_22Record"/>
+	</context>
+
+	<kColl id="Group_B_22Record">
+		<field id="GroupField"/>
+		<field id="hiddenField"/>
+	</kColl>
+
+</Group_B_22Flow>

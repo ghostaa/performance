@@ -1,0 +1,27 @@
+
+.errorMessage{
+	background-image: url(../images/errorIcon.png);
+	background-repeat: no-repeat;
+	background-position: center left;
+	padding-left:20px;
+/*	border-bottom: #FF0000 1px solid; */
+	color:#FF0000;
+}
+
+.warnMessage{
+	background-image: url(../images/warnIcon.png);
+	background-repeat: no-repeat;
+	background-position: center left;
+	padding-left:20px;
+/*	border-bottom: #FFAA11 1px solid; */
+	color: #000000;
+}
+
+.infoMessage{
+	background-image: url(../images/infoIcon.png);
+	background-repeat: no-repeat;
+	background-position: center left;
+	padding-left:20px;
+/*	border-bottom: #0000FF 1px solid; */
+	color:#0000FF;
+}

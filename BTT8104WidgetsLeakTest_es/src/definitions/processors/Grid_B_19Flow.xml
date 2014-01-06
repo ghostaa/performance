@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid_B_19Flow>
+
+
+	<htmlProcessor context="Grid_B_19Ctx" id="Grid_B_19Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Grid_B_19"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Grid_B_19.jsp" id="Grid_B_19">
+			<transitions>
+				<htmlTransition id="Grid_B_19.reload" targetState="Grid_B_19"/>
+				<htmlTransition id="Grid_B_19.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Grid_B_19Ctx" type="op">
+		<refKColl refId="Grid_B_19Record"/>
+	</context>
+
+	<kColl id="Grid_B_19Record">
+		<field id="Grid_B_19Field"/>
+		<iColl id="TableList">
+			<refData refId="tableRecord" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="tableRecord">
+		<data id="d1" refType="String"/>
+		<data id="d2" refType="String"/>
+		<data id="d3" refType="String"/>
+	</kColl>
+
+</Grid_B_19Flow>

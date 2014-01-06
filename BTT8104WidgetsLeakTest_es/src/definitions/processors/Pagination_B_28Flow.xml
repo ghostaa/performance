@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pagination_B_28Flow>
+
+
+	<htmlProcessor context="Pagination_B_28Ctx" id="Pagination_B_28Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="InitPaginationDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<operationState typeIdInfo="InitPaginationDataOp" id="InitPaginationDataOp" type="operation">
+			<transitions>
+				<htmlTransition id="InitPaginationDataOp.ok" outputMapFmt="InitPaginationDataOp.ok_OutputFmt" targetState="Pagination_B_28"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="Pagination_B_28.jsp" id="Pagination_B_28">
+			<transitions>
+				<htmlTransition id="Pagination_B_28.reload" targetState="Pagination_B_28"/>
+				<htmlTransition id="Pagination_B_28.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Pagination_B_28Ctx" type="op">
+		<refKColl refId="Pagination_B_28Record"/>
+	</context>
+
+	<kColl id="Pagination_B_28Record">
+		<refData refId="AccountInfoList"/>
+		<refData refId="AccountInfoRecord" lazy="false" alias="SelectAccountRecord"/>
+		<refData refId="AccountInfoList" alias="SelectAccountList"/>
+		<kColl id="paginationData">
+			<data id="Pagination_B_28_table1_totalRowNumber" value="35" refType="Integer"/>
+			<data id="Pagination_B_28_table1_pageNumber" value="1" refType="Long"/>
+			<data id="Pagination_B_28_table1_rowsPerPage" value="10" refType="Integer"/>
+		</kColl>
+	</kColl>
+
+	<fmtDef id="InitPaginationDataOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="AccountInfoList" to="AccountInfoList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</Pagination_B_28Flow>

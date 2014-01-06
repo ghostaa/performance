@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComboBox_B_3Flow>
+
+
+	<htmlProcessor context="ComboBox_B_3Ctx" id="ComboBox_B_3Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="ComboBox_B_3"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="ComboBox_B_3.jsp" id="ComboBox_B_3">
+			<transitions>
+				<htmlTransition id="ComboBox_B_3.nextCase" targetState="OK"/>
+				<htmlTransition id="ComboBox_B_3.reload" targetState="ComboBox_B_3"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="ComboBox_B_3Ctx" type="op">
+		<refKColl refId="ComboBox_B_3Record"/>
+	</context>
+
+	<kColl id="ComboBox_B_3Record">
+		<refData refId="ComboBox_B_3List"/>
+		<refData refId="ComboBox_B_3_Data" lazy="false"/>
+	</kColl>
+
+	<iColl id="ComboBox_B_3List" size="6">
+		<kColl id="ComboBox_B_3Record01">
+			<field id="labelselect" value="label"/>
+			<field id="valueselect" value="value"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="ComboBox_B_3_Data">
+		<field id="ComboBox_B_3Field" value="1111"/>
+		<field id="ComboBox_B_3Field01" value="2222"/>
+		<field id="ComboBox_B_3Field02" value="3333"/>
+	</kColl>
+
+</ComboBox_B_3Flow>

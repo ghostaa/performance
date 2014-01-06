@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPane_B_24Flow>
+
+
+	<htmlProcessor context="ContentPane_B_24Ctx" id="ContentPane_B_24Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="ContentPane_B_24"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="ContentPane_B_24.jsp" id="ContentPane_B_24">
+			<transitions>
+				<htmlTransition id="ContentPane_B_24.reload" targetState="ContentPane_B_24"/>
+				<htmlTransition id="ContentPane_B_24.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="ContentPane_B_24Ctx" type="op">
+		<refKColl refId="ContentPane_B_24Record"/>
+	</context>
+
+	<kColl id="ContentPane_B_24Record">
+		<field id="ContentPaneField"/>
+	</kColl>
+
+</ContentPane_B_24Flow>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dialog_B_30Flow>
+
+
+	<htmlProcessor context="Dialog_B_30Ctx" id="Dialog_B_30Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Dialog_B_30"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="TextBox_B_1.jsp"/>
+
+		<popupPageState type="page" typeIdInfo="Dialog_B_30.jsp" id="Dialog_B_30">
+			<transitions>
+				<htmlTransition id="Dialog_B_30.start" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="Dialog_B_30Ctx" type="op">
+		<refKColl refId="Dialog_B_30Record"/>
+	</context>
+
+	<kColl id="Dialog_B_30Record">
+		<field id="Dialog_B_30Field"/>
+	</kColl>
+
+</Dialog_B_30Flow>

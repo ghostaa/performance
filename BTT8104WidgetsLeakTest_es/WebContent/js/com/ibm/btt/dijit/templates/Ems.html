@@ -1,0 +1,7 @@
+<div class="enhancedMultiSelect">
+		<div><span dojoAttachPoint="labelNode" class="enhancedMultiSelectLabel">1 of 10 selected</span></div>
+		<div dojoAttachPoint="buttonNode" class="enhancedMultiSelectButton"><span class="enhancedMultiSelectSelAll" data-dojo-attach-event="ondijitclick:_selectAll" tabindex="${tabIndex}">Select All</span>
+			 <span class="enhancedMultiSelectUnSel" data-dojo-attach-event="ondijitclick:_unselectAll" tabindex="${tabIndex}">UnSelect All</span>
+			 <span class="enhancedMultiSelectInvert" data-dojo-attach-event="ondijitclick:_invertSelection" tabindex="${tabIndex}">Invert Selection</span></div>
+		<div><div multiple="true" name="${dataName}" tabindex="${tabIndex}" labelFieldForSubmit="${labelFieldForSubmit}"  valueFieldForSubmit="${valueFieldForSubmit}" dojoType="com.ibm.btt.dijit.CheckedMultiSelect"  dojoAttachPoint="wrapperDiv"></div></div>
+</div>

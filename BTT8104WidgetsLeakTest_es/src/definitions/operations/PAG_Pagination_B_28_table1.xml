@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PAG_Pagination_B_28_table1>
+
+	<operation id="PAG_Pagination_B_28_table1" context="pagOpCtx" implClass="com.ibm.btt.cs.ajax.DefaultPaginationOp">
+		<refFormat refId="directInputMapping" name="directInputMapping"/>
+		<refFormat refId="normalOutputMapping" name="normalOutputMapping"/>
+	</operation>
+
+	<context id="pagOpCtx" type="op">
+		<refKColl refId="pagOpData"/>
+	</context>
+
+	<kColl id="pagOpData">
+		<kColl id="tableProperties">
+			<field id="tableId" value="table1"/>
+			<field id="dataName" value="SelectAccountRecord"/>
+			<field id="dataNameForList" value="AccountInfoList"/>
+			<field id="rowsPerPage" value="10"/>
+			<field id="operationNameForPagination" value="CreatePaginationDataOp"/>
+			<field id="directPagination" value="true"/>
+			<!-- this four fields corresponds to four columns on table -->
+			<field id="tableColumnIDs" value="d1,d2,d3"/>
+		</kColl>
+		<kColl id="pageRequest">
+			<!-- candidate value should be "initial", "next", "prev", "page" -->
+			<field id="pageEvent"/>
+			<field id="pageNumber"/>
+			<field id="sortData"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+		</kColl>
+		<kColl id="pageReply">
+			<field id="totalRowNumber"/>
+			<field id="enableNext"/>
+			<field id="enablePrevious"/>
+			<field id="errMsg"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+			<!-- the technical operation will set data into iColl, filtering through the tableColumnIDs -->
+			<iColl id="items">
+				<field id="dummy"/>
+			</iColl>
+		</kColl>
+	</kColl>
+
+	<fmtDef id="directInputMapping">
+		<mapperConverterExpression>
+			<map from="AccountInfoList" to="AccountInfoList" append="false"/>
+			<map from="paginationData.Pagination_B_28_table1_totalRowNumber" to="paginationData.totalRowNumber"/>
+			<map from="paginationData.Pagination_B_28_table1_pageNumber" to="paginationData.pageNumber"/>
+			<map from="paginationData.Pagination_B_28_table1_rowsPerPage" to="paginationData.rowsPerPage"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="normalOutputMapping">
+		<mapperConverterExpression>
+			<map from="paginationData.totalRowNumber" to="paginationData.Pagination_B_28_table1_totalRowNumber"/>
+			<map from="paginationData.pageNumber" to="paginationData.Pagination_B_28_table1_pageNumber"/>
+			<map from="paginationData.rowsPerPage" to="paginationData.Pagination_B_28_table1_rowsPerPage"/>
+			<map from="AccountInfoList" to="AccountInfoList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</PAG_Pagination_B_28_table1>

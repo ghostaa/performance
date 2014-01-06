@@ -1,0 +1,21 @@
+.dijitLabelBase {
+	display: inline-block;
+	overflow: hidden;
+	/*text-overflow: ellipsis;*/
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+.dijitLabelWrap {
+	white-space: normal;
+	word-wrap: break-word;
+}
+
+.bttLinkImage{
+	/*cursor:pointer;*/
+}
+
+.bttDisabledLink{
+	color: gray;
+	cursor: default;
+}

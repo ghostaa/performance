@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Message_B_20Flow>
+
+
+	<htmlProcessor context="Message_B_20Ctx" id="Message_B_20Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Message_B_20"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Message_B_20.jsp" id="Message_B_20">
+			<transitions>
+				<htmlTransition id="Message_B_20.reload" targetState="Message_B_20"/>
+				<htmlTransition id="Message_B_20.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Message_B_20Ctx" type="op">
+		<refKColl refId="Message_B_20Record"/>
+	</context>
+
+	<kColl id="Message_B_20Record">
+		<field id="messageField" value="message field value"/>
+	</kColl>
+
+</Message_B_20Flow>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GridComparer_B_26Flow>
+
+
+	<htmlProcessor context="GridComparer_B_26Ctx" id="GridComparer_B_26Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="GridDijit_B_18Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="GridDijit_B_18Op" id="GridDijit_B_18Op" type="operation">
+			<transitions>
+				<htmlTransition id="GridDijit_B_18Op.ok" outputMapFmt="GridDijit_B_18Op.ok_OutputFmt" targetState="GridComparer_B_26"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="GridComparer_B_26.jsp" id="GridComparer_B_26">
+			<transitions>
+				<htmlTransition id="GridComparer_B_26.reload" targetState="GridComparer_B_26"/>
+				<htmlTransition id="GridComparer_B_26.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="GridComparer_B_26Ctx" type="op">
+		<refKColl refId="GridComparer_B_26Record"/>
+	</context>
+
+	<kColl id="GridComparer_B_26Record">
+		<field id="Grid_B_19Field"/>
+		<iColl id="TableList">
+			<refData refId="tableRecord" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="tableRecord">
+		<data id="d1" refType="String"/>
+		<data id="d2" refType="String"/>
+		<data id="d3" refType="String"/>
+	</kColl>
+
+	<fmtDef id="GridDijit_B_18Op.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="TableList" to="TableList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</GridComparer_B_26Flow>
