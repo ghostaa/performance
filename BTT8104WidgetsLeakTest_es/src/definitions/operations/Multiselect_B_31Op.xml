@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Multiselect_B_31Op>
+
+	<operation id="Multiselect_B_31Op" context="Multiselect_B_31CtxOp" implClass="com.ibm.btt.application.op.Multiselect_B_31"/>
+
+	<context id="Multiselect_B_31CtxOp" type="op">
+		<refKColl refId="Multiselect_B_31Record"/>
+	</context>
+
+	<kColl id="Multiselect_B_31Record">
+		<iColl id="Multiselect_B_31List" size="10">
+			<kColl id="Multiselect_B_31Record01">
+				<data id="Multiselect_B_31Data" refType="Integer"/>
+				<data id="Multiselect_B_31Data01" refType="String"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</Multiselect_B_31Op>
