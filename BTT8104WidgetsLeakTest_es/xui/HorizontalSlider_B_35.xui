@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="186,101,420,300" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'HorizontalSlider_B_35.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="420" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="dijit_form_HorizontalSlider" intermediateChanges="false" bottomLabels="false" bottomRules="false" minimum="0" id="horizontalSlider" maximum="100" bottom__rule__count="3" topRules="false" clickSelect="true" top__count="3" topLabels="false" top__rule__count="3" bottom__rule__height="5" showButtons="true" bottom__label__font__size="11" top__rule__height="5" readOnly="false" value="0" bottom__count="3" top__label__font__size="11" disabled="false">
+            <extendWidgetInfo styleClass="dijitSliderH dijitSlider"/>
+            <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="FixedSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=reload" id="btn_reload" text="Click to Reload current page HorizontalSlider BTT Case35">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button_ECA" buttonType="button" text="Button">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button_ECA" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="horizontalSlider">
+          <function name="focus"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="horizontalSlider" event="onFocus"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="horizontalSlider" property="disabled">
+          <value type="constant" constant="true"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>

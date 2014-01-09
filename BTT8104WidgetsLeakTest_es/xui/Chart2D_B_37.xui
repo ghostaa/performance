@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="158,67,420,434" dataBinding="{'ctxType':'proc','ctxFile':'Chart2D_B_37Flow','ctxName':'Chart2D_B_37Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'Chart2D_B_37.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="434" verticalAlignment="1" widthHint="420" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="dojox_charting_widget_Chart2D" minorTicks="true" y__maxLabelCharCount="0" y__minorTicks="true" theme="dojox.charting.themes.Claro" maxLabelCharCount="0" fixUpper="none" y__minorLabels="false" hMajorLines="true" maxLabelSize="0" y__majorLabels="true" hMinorLines="false" microTicks="false" y__fixUpper="none" minorLabels="false" y__maxLabelSize="0" y__enable__axis="false" y__microTicks="false" majorLabels="true" id="chart2D" titleFontColor="RGB{0, 0, 0}" vMajorLines="true" enable__axis="false" vMinorLines="false" y__titleFontColor="RGB{0, 0, 0}" Grid="false" y__includeZero="false" fixLower="none" includeZero="false" y__fixLower="none" rotation="1" templateId="chart2d">
+            <extendWidgetInfo/>
+            <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <container name="dojox_charting_widget_plot" minorTicks="true" y__maxLabelCharCount="0" y__minorTicks="true" theme="dojox.charting.themes.Claro" maxLabelCharCount="0" fixUpper="none" y__minorLabels="false" hMajorLines="true" maxLabelSize="0" y__majorLabels="true" hMinorLines="false" microTicks="false" y__fixUpper="none" minorLabels="false" y__maxLabelSize="0" y__enable__axis="false" y__microTicks="false" majorLabels="true" id="plot" titleFontColor="RGB{0, 0, 0}" vMajorLines="true" enable__axis="false" vMinorLines="false" y__titleFontColor="RGB{0, 0, 0}" Grid="false" y__includeZero="false" fixLower="none" includeZero="false" y__fixLower="none" type="Columns" precision="1" rotation="1" templateId="Plot">
+              <extendWidgetInfo parentExtendNodeId="contentArea" extendNodeColNum="1"/>
+              <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="1" maxCol="1" maxRow="1" minCol="1" minRow="2"/>
+              <hiddenWidget name="dojox_charting_widget_series" Shadow="false" Magnify="false" Animate="false" minBarSize="0" ShadowColor="RGB{0, 0, 0}" htmlLabels="true" radius="0" Highlight="false" gap="0" Markers="false" id="series" labelStyle="default" MoveSlice="false" store="{&quot;id&quot;:&quot;localContextStore&quot;,&quot;baseType&quot;:&quot;BTT_DOJO_STORE&quot;}" seriesName="series" Tooltip="false" Shake="false" labelOffset="0" rootPath="Multiselect_B_31List" maxBarSize="-1" mappingOptions="{&quot;value&quot;:{&quot;size&quot;:&quot;&quot;,&quot;tooltip&quot;:&quot;&quot;,&quot;x&quot;:&quot;&quot;,&quot;y&quot;:&quot;@Multiselect_B_31Data&quot;},&quot;__btt_value&quot;:&quot;&quot;,&quot;__btt_type&quot;:&quot;Complex&quot;}" type="Default" axisType="plot" precision="1" labels="false"/>
+            </container>
+            <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=reload" id="btn_reload" text="Click to Reload current page Chart2D BTT Case37">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button_ECA" buttonType="button" disabled="true" text="ECA">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+    <hiddenWidget name="BttStoreWidget" Service="{&quot;serviceName&quot;:&quot;Multiselect_B_31Op&quot;,&quot;transactionResourcePath&quot;:&quot;src\/definitions\/operations\/Multiselect_B_31Op.transaction&quot;,&quot;project&quot;:&quot;BTT8104WidgetsLeakTest_es&quot;,&quot;objectType&quot;:&quot;bttService&quot;,&quot;xmlResourcePath&quot;:&quot;src\/definitions\/operations\/Multiselect_B_31Op.xml&quot;,&quot;serviceType&quot;:&quot;OPERATION&quot;}" id="localContextStore"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button_ECA" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false"/>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>

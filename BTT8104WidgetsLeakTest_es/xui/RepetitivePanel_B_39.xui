@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="107,81,400,300" dataBinding="{'ctxType':'proc','ctxFile':'RepetitivePanel_B_39Flow','ctxName':'RepetitivePanel_B_39Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'RepetitivePanel_B_39.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="RepetitivePanel" dataNameForList="{'ctxType':'proc','ctxFile':'RepetitivePanel_B_39Flow','ctxName':'RepetitivePanel_B_39Ctx','dataName':'RepetitivePanel_B_39List'}" id="repetitivePanel">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'RepetitivePanel_B_39Flow','ctxName':'RepetitivePanel_B_39Ctx','dataName':'RepetitivePanel_B_39List.0.RepetitivePanel_B_39Data'}" id="label" text="Label">
+            <gridData heightHint="13" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'RepetitivePanel_B_39Flow','ctxName':'RepetitivePanel_B_39Ctx','dataName':'RepetitivePanel_B_39List.0.RepetitivePanel_B_39Data01'}" id="label01" text="Label">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="2"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=reload" id="btn_reload" text="Click to Reload current page RepetivePanel BTT Case39">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button_ECA" disabled="true" buttonType="button" text="ECA">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button_ECA" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false"/>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>

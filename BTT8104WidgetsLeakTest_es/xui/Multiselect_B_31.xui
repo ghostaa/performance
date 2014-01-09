@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="149,106,400,300" dataBinding="{'ctxType':'proc','ctxFile':'Multiselect_B_31Flow','ctxName':'Multiselect_B_31FlowCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'Multiselect_B_31.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="MultiSelect" dataNameForList="{'ctxType':'proc','ctxFile':'Multiselect_B_31Flow','ctxName':'Multiselect_B_31FlowCtx','dataName':'Multiselect_B_31List'}" labelField="Multiselect_B_31Data01" valueField="Multiselect_B_31Data01" id="multiSelect">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=reload" id="btn_reload" text="Click to Reload current page Multiselect BTT Case31">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button01" buttonType="button" text="ECA Button">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button01" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="multiSelect">
+          <function name="focus"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="multiSelect" event="onFocus"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="multiSelect" property="disabled">
+          <value type="constant" constant="true"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>

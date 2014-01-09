@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="110,79,400,300" dataBinding="{'ctxType':'proc','ctxFile':'EnhancedMultiSelect_B_33Flow','ctxName':'EnhancedMultiSelect_B_33Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'EnhancedMultiSelect_B_33.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="CheckedMultiSelectExt" dataNameForList="{'ctxType':'proc','ctxFile':'EnhancedMultiSelect_B_33Flow','ctxName':'EnhancedMultiSelect_B_33Ctx','dataName':'EnhancedMultiSelect_B_33List'}" labelField="EnhancedMultiSelect_B_33Field" valueField="EnhancedMultiSelect_B_33Field" id="checkedMultiSelectExt">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=reload" id="btn_reload" text="Click to Reload current page EnhancedMultiSelect BTT Case33">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button_ECA" buttonType="button" text="ECA">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button_ECA" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="checkedMultiSelectExt">
+          <function name="focus"/>
+        </action>
+        <action type="widgetProperty" widget="button_ECA" property="text">
+          <value type="constant" constant="'ab'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="checkedMultiSelectExt" event="onFocus"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="checkedMultiSelectExt" property="visibility">
+          <value type="constant" constant="'hidden'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>

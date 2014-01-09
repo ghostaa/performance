@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="154,98,400,420" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'VerticalSlider_B_36.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="420" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="dijit_form_VerticalSlider" intermediateChanges="false" minimum="0" right__rule__count="3" id="verticalSlider" maximum="100" clickSelect="true" right__count="3" left__label__font__size="11" leftRules="false" rightRules="false" rightLabels="false" right__label__font__size="11" left__rule__count="3" showButtons="true" right__rule__width="5" left__count="3" readOnly="false" leftLabels="false" value="0" left__rule__width="3" disabled="false">
+            <extendWidgetInfo/>
+            <gridData heightHint="400" verticalAlignment="1" widthHint="400" heightType="FixedSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=reload" id="btn_reload" text="Click to Reload current page VerticalSlider BTT Case36">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button_ECA" buttonType="button" text="ECA">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="3"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button_ECA" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="verticalSlider">
+          <function name="focus"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="verticalSlider" event="onFocus"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="verticalSlider" property="disabled">
+          <value type="constant" constant="true"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>

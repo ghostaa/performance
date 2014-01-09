@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="92,130,400,300" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'BorderContainer_B_38.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightHint="24" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="dijit_layout_BorderContainer" FillHorizontal="true" RightPanel="false" gutters="true" FillVertical="true" BottomPanel="false" id="borderContainer" LeftPanel="false">
+            <extendWidgetInfo>
+              <extendNode extendNodeId="topPanel">
+                <gridData verticalAlignment="1" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <properties region="top" onLoad="dijit.byId('borderContainer').layout();" __uuid="topPanel" id="borderContainer_topPanel"/>
+              </extendNode>
+              <extendNode extendNodeId="leftPanel">
+                <gridData verticalAlignment="1" heightType="Fill" widthType="AutoSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <properties region="left" __uuid="leftPanel" id="borderContainer_leftPanel"/>
+              </extendNode>
+              <extendNode extendNodeId="centerPanel">
+                <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <properties region="center" __uuid="centerPanel" id="borderContainer_centerPanel"/>
+              </extendNode>
+              <extendNode extendNodeId="rightPanel">
+                <gridData verticalAlignment="1" heightType="Fill" widthType="AutoSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <properties region="right" __uuid="rightPanel" id="borderContainer_rightPanel"/>
+              </extendNode>
+              <extendNode extendNodeId="bottomPanel">
+                <gridData verticalAlignment="1" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <properties region="bottom" __uuid="bottomPanel" id="borderContainer_bottomPanel"/>
+              </extendNode>
+            </extendWidgetInfo>
+            <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="1" maxCol="1" maxRow="3"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=reload" id="btn_reload" text="Click to Reload current page BorderContainer BTT Case38">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button_ECA" buttonType="button" text="ECA">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button_ECA" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="borderContainer_centerPanel">
+          <function name="refresh"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="borderContainer_centerPanel" event="onFocus"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="borderContainer" property="gutters">
+          <value type="constant" constant="true"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>
