@@ -27,7 +27,7 @@
         </widget>
         <widget name="PlaceHolder">
           <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
-          <widget name="Button" id="button01" buttonType="button" text="ECA">
+          <widget name="Button" id="button01" disabled="true" buttonType="button" text="ECA">
             <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
           </widget>
           <gridLayout numColumns="0"/>
