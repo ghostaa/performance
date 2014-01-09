@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script_B_34Flow>
+
+
+	<htmlProcessor context="Script_B_34Ctx" id="Script_B_34Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Script_B_34"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Script_B_34.jsp" id="Script_B_34">
+			<transitions>
+				<htmlTransition id="Script_B_34.reload" targetState="Script_B_34"/>
+				<htmlTransition id="Script_B_34.final" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="Script_B_34Ctx" type="op">
+		<refKColl refId="Script_B_34Record"/>
+	</context>
+
+	<kColl id="Script_B_34Record">
+	</kColl>
+
+</Script_B_34Flow>

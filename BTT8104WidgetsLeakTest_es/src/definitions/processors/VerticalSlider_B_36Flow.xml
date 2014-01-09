@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VerticalSlider_B_36Flow>
+
+
+	<htmlProcessor context="VerticalSlider_B_36Ctx" id="VerticalSlider_B_36Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="VerticalSlider_B_36"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="VerticalSlider_B_36.jsp" id="VerticalSlider_B_36">
+			<transitions>
+				<htmlTransition id="VerticalSlider_B_36.reload" targetState="VerticalSlider_B_36"/>
+				<htmlTransition id="VerticalSlider_B_36.final" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="VerticalSlider_B_36Ctx" type="op">
+		<refKColl refId="VerticalSlider_B_36Record"/>
+	</context>
+
+	<kColl id="VerticalSlider_B_36Record">
+	</kColl>
+
+</VerticalSlider_B_36Flow>

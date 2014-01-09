@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConditionalPanel_B_40Flow>
+
+
+	<htmlProcessor context="ConditionalPanel_B_40Ctx" id="ConditionalPanel_B_40Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="ConditionalPanel_B_40"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="ConditionalPanel_B_40.jsp" id="ConditionalPanel_B_40">
+			<transitions>
+				<htmlTransition id="ConditionalPanel_B_40.reload" targetState="ConditionalPanel_B_40"/>
+				<htmlTransition id="ConditionalPanel_B_40.final" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="ConditionalPanel_B_40Ctx" type="op">
+		<refKColl refId="ConditionalPanel_B_40Record"/>
+	</context>
+
+	<kColl id="ConditionalPanel_B_40Record">
+	</kColl>
+
+</ConditionalPanel_B_40Flow>

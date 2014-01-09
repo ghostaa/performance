@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HorizontalSider_B_35Flow>
+
+
+	<htmlProcessor context="HorizontalSider_B_35Ctx" id="HorizontalSider_B_35Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="HorizontalSlider_B_35"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="HorizontalSlider_B_35.jsp" id="HorizontalSlider_B_35">
+			<transitions>
+				<htmlTransition id="HorizontalSlider_B_35.reload" targetState="HorizontalSlider_B_35"/>
+				<htmlTransition id="HorizontalSlider_B_35.final" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="HorizontalSider_B_35Ctx" type="op">
+		<refKColl refId="HorizontalSider_B_35Record"/>
+	</context>
+
+	<kColl id="HorizontalSider_B_35Record">
+	</kColl>
+
+</HorizontalSider_B_35Flow>

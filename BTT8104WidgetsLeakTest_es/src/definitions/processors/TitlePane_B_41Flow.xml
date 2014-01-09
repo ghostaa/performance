@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TitlePane_B_41Flow>
+
+
+	<htmlProcessor context="TitlePane_B_41Ctx" id="TitlePane_B_41Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="TitlePane_B_41"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="TitlePane_B_41.jsp" id="TitlePane_B_41">
+			<transitions>
+				<htmlTransition id="TitlePane_B_41.reload" targetState="TitlePane_B_41"/>
+				<htmlTransition id="TitlePane_B_41.final" targetState="Ok"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="Ok" type="final"/>
+	</htmlProcessor>
+
+	<context id="TitlePane_B_41Ctx" type="op">
+		<refKColl refId="TitlePane_B_41Record"/>
+	</context>
+
+	<kColl id="TitlePane_B_41Record">
+	</kColl>
+
+</TitlePane_B_41Flow>

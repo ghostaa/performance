@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Chart2D_B_37Flow>
+
+
+	<htmlProcessor context="Chart2D_B_37Ctx" id="Chart2D_B_37Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Chart2D_B_37"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Chart2D_B_37.jsp" id="Chart2D_B_37">
+			<transitions>
+				<htmlTransition id="Chart2D_B_37.reload" targetState="Chart2D_B_37"/>
+				<htmlTransition id="Chart2D_B_37.final" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="Chart2D_B_37Ctx" type="op">
+		<refKColl refId="Chart2D_B_37Record"/>
+	</context>
+
+	<kColl id="Chart2D_B_37Record">
+		<iColl id="Chart2D_B_37List">
+			<kColl id="Chart2D_B_37Record01">
+				<data id="Chart2D_B_37Data" refType="Integer"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<fmtDef id="Multiselect_B_31Op.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="Multiselect_B_31List.*.Multiselect_B_31Data" to="Chart2D_B_37List.*.Chart2D_B_37Data" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</Chart2D_B_37Flow>

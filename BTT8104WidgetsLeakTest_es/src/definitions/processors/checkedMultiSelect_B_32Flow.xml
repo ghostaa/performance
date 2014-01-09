@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkedMultiSelect_B_32Flow>
+
+
+	<htmlProcessor context="checkedMultiSelect_B_32Ctx" id="checkedMultiSelect_B_32Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="checkedMultiSelect_B_32"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="checkedMultiSelect_B_32.jsp" id="checkedMultiSelect_B_32">
+			<transitions>
+				<htmlTransition id="checkedMultiSelect_B_32.reload" targetState="checkedMultiSelect_B_32"/>
+				<htmlTransition id="checkedMultiSelect_B_32.final" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="checkedMultiSelect_B_32Ctx" type="op">
+		<refKColl refId="checkedMultiSelect_B_32Record"/>
+	</context>
+
+	<kColl id="checkedMultiSelect_B_32Record">
+		<iColl id="checkedMultiSelect_B_32List">
+			<kColl id="checkedMultiSelect_B_32Record01">
+				<field id="checkedMultiSelect_B_32Field" value="beijing"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</checkedMultiSelect_B_32Flow>

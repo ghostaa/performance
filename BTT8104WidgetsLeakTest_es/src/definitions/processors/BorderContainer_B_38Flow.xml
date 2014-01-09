@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BorderContainer_B_38Flow>
+
+
+	<htmlProcessor context="BorderContainer_B_38Ctx" id="BorderContainer_B_38Flow">
+		<htmlState type="page" typeIdInfo="BorderContainer_B_38.jsp" id="BorderContainer_B_38">
+			<transitions>
+				<htmlTransition id="BorderContainer_B_38.final" targetState="OK"/>
+				<htmlTransition id="BorderContainer_B_38.reload" targetState="BorderContainer_B_38"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="BorderContainer_B_38"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="BorderContainer_B_38Ctx" type="op">
+		<refKColl refId="BorderContainer_B_38Record"/>
+	</context>
+
+	<kColl id="BorderContainer_B_38Record">
+		<field id="BorderContainer_B_38Field"/>
+	</kColl>
+
+</BorderContainer_B_38Flow>

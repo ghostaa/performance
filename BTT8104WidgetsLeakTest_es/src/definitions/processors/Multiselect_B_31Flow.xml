@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Multiselect_B_31Flow>
+
+
+	<htmlProcessor context="Multiselect_B_31FlowCtx" id="Multiselect_B_31Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Multiselect_B_31Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Multiselect_B_31.jsp" id="Multiselect_B_31">
+			<transitions>
+				<htmlTransition id="Multiselect_B_31.reload" targetState="Multiselect_B_31"/>
+				<htmlTransition id="Multiselect_B_31.nextCase" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="Multiselect_B_31Op" id="Multiselect_B_31Op" outputMapFmt="Multiselect_B_31Op_OutputFmt" type="operation">
+			<transitions>
+				<htmlTransition id="Multiselect_B_31Op.opEvt" outputMapFmt="Multiselect_B_31Op_OutputFmt" targetState="Multiselect_B_31"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="Multiselect_B_31FlowCtx" type="op">
+		<refKColl refId="Multiselect_B_31Record"/>
+	</context>
+
+	<kColl id="Multiselect_B_31Record">
+		<iColl id="Multiselect_B_31List" size="10">
+			<kColl id="Multiselect_B_31Record01">
+				<data id="Multiselect_B_31Data01" refType="String"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<fmtDef id="Multiselect_B_31Op_OutputFmt">
+		<mapperConverterExpression>
+			<map from="Multiselect_B_31List.*.Multiselect_B_31Data01" to="Multiselect_B_31List.*.Multiselect_B_31Data01" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</Multiselect_B_31Flow>

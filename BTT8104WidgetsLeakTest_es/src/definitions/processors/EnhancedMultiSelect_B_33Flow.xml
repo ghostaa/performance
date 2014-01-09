@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnhancedMultiSelect_B_33Flow>
+
+
+	<htmlProcessor context="EnhancedMultiSelect_B_33Ctx" id="EnhancedMultiSelect_B_33Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="EnhancedMultiSelect_B_33"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="EnhancedMultiSelect_B_33.jsp" id="EnhancedMultiSelect_B_33">
+			<transitions>
+				<htmlTransition id="EnhancedMultiSelect_B_33.reload" targetState="EnhancedMultiSelect_B_33"/>
+				<htmlTransition id="EnhancedMultiSelect_B_33.final" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="EnhancedMultiSelect_B_33Ctx" type="op">
+		<refKColl refId="EnhancedMultiSelect_B_33Record"/>
+	</context>
+
+	<kColl id="EnhancedMultiSelect_B_33Record">
+		<iColl id="EnhancedMultiSelect_B_33List">
+			<kColl id="EnhancedMultiSelect_B_33Record01">
+				<field id="EnhancedMultiSelect_B_33Field" value="beijing"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</EnhancedMultiSelect_B_33Flow>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RepetitivePanel_B_39Flow>
+
+
+	<htmlProcessor context="RepetitivePanel_B_39Ctx" id="RepetitivePanel_B_39Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Multiselect_B_31Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="RepetitivePanel_B_39.jsp" id="RepetitivePanel_B_39">
+			<transitions>
+				<htmlTransition id="RepetitivePanel_B_39.final" targetState="OK"/>
+				<htmlTransition id="RepetitivePanel_B_39.reload" targetState="RepetitivePanel_B_39"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="Multiselect_B_31Op" id="Multiselect_B_31Op" type="operation">
+			<transitions>
+				<htmlTransition id="Multiselect_B_31Op.opEvt" outputMapFmt="Multiselect_B_31Op.opEvt_OutputFmt" targetState="RepetitivePanel_B_39"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="RepetitivePanel_B_39Ctx" type="op">
+		<refKColl refId="RepetitivePanel_B_39Record"/>
+	</context>
+
+	<kColl id="RepetitivePanel_B_39Record">
+		<iColl id="RepetitivePanel_B_39List" size="10">
+			<kColl id="RepetitivePanel_B_39Record01">
+				<data id="RepetitivePanel_B_39Data" refType="String"/>
+				<data id="RepetitivePanel_B_39Data01" refType="Integer"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<fmtDef id="Multiselect_B_31Op.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="Multiselect_B_31List.*.Multiselect_B_31Data" to="RepetitivePanel_B_39List.*.RepetitivePanel_B_39Data01" append="false"/>
+			<map from="Multiselect_B_31List.*.Multiselect_B_31Data01" to="RepetitivePanel_B_39List.*.RepetitivePanel_B_39Data" append="ignore"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</RepetitivePanel_B_39Flow>
