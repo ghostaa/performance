@@ -15,7 +15,7 @@
 %>
 
 <html lang="<%=language %>">
-<!-- Generated from index.xui by ghost, on Mon Jan 06 14:47:49 CST 2014 -->
+<!-- Generated from index.xui by BTT, on Thu Jan 09 16:52:37 CST 2014 -->
 <head>
 <%@ taglib uri="/WEB-INF/bttdojo.tld" prefix="bttdojo"%>
 <%@ page import="com.ibm.btt.cs.html.JSPUtil" %> 
@@ -144,173 +144,224 @@ dojo.addOnLoad(function(){
 </head>
 <body class="claro" style="visibility:hidden">
 <%request.setAttribute("dse_sessionId", session.getId()); %>
-  <div role="presentation" id="index_null" class="BTTTableStyle">
-    <div class="BTTRowStyle" role="presentation">
-      <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:top;">
+  <div id="index_null" class="BTTTableStyle">
+    <div class="BTTRowStyle">
+      <div class="BTTCellStyle" align="left" style="vertical-align:top;">
         <bttdojo:form id="index_form" errorPage="index.jsp">
-          <div role="presentation" style="width:387px;height:777px;" class="BTTTableStyle">
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+          <div style="width:387px;height:965px;" class="BTTTableStyle">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:label id="index_label" text="BTT widgets memory leak performance Test cases"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:label id="index_Label01" text="These cases are desiged for the auto-test. please "/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:label id="index_Label02" text="follow the page conversion in the readme.docx file"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link" text="B1_Anchor" flowId="Anchor_B_1Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link01" text="B2_CheckBox" flowId="CheckBox_B_2Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link02" text="B3_ComboBox" flowId="ComboBox_B_3Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link03" text="B4_CurrencyTextBox" flowId="CurrencyTextBox_B_4Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link01" text="B5_DateTextBox" flowId="DateTextBox_B_5Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link02" text="B6_Form" flowId="Form_B_6Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link04" text="B7_Button" flowId="Button_B_7Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link03" text="B8_Image" flowId="Image_B_8Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link05" text="B9_Label" flowId="Label_B_9Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link07" text="B11_RadioButton" flowId="RadioButton_B_11Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link06" text="B10_NumberTextBox" flowId="NumberTextBox_B_10Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link08" text="B12_RichTextEditor" flowId="RichTextEditor_B_12Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link09" text="B13_Select" flowId="Select_B_13Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link10" text="B14_StringTextBox" flowId="StringTextBox_B_14Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link11" text="B15_TextArea" flowId="TextArea_B_15Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link04" text="B16_Tree" flowId="Tree_B_16Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link12" text="B17_ValidationTextBox" flowId="ValidationTextBox_B_17Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link05" text="B18_GridDijit" flowId="GridDijit_B_18Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link06" text="B19_Grid" flowId="Grid_B_19Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link13" text="B20_Message" flowId="Message_B_20Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link07" text="B21_FileUpload" flowId="FileUpload_B_21Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link14" text="B22_Group" flowId="Group_B_22Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link08" text="B23_TabbedPane" flowId="TabbedPane_B_23Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link09" text="B24_ContentPane" flowId="ContentPane_B_24Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link15" text="B25_Hidden" flowId="Hidden_B_25" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link12" text="B26_GridComparer" flowId="GridComparer_B_26Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link10" text="B28_Pagination" flowId="Pagination_B_28Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_link16" text="B29_FormXvalidation" flowId="FormValidationMixin_B_29Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
                 <bttdojo:a id="index_Link11" text="B30_Dialog" flowId="Dialog_B_30Flow" flowEvent="start"/>
               </div>
             </div>
-            <div class="BTTRowStyle" role="presentation">
-              <div class="BTTCellStyle" role="presentation" align="left" style="vertical-align:middle;">
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
+                <bttdojo:a id="index_link17" text="B31_Multiselect" flowId="Multiselect_B_31Flow" flowEvent="start"/>
+              </div>
+            </div>
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
+                <bttdojo:a id="index_B32_checkedMultiSelect" text="B32_checkedMultiSelect" flowId="checkedMultiSelect_B_32Flow" flowEvent="start"/>
+              </div>
+            </div>
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
+                <bttdojo:a id="index_EnhancedMultiSelect" text="B33_EnhancedMultiSelect" flowId="EnhancedMultiSelect_B_33Flow"/>
+              </div>
+            </div>
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="height:24px;vertical-align:middle;">
+                <bttdojo:a id="index_Script" text="B34_Script" flowId="Script_B_34Flow"/>
+              </div>
+            </div>
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
+                <bttdojo:a id="index_HorizontalSider" text="B35_HorizontalSider" flowId="HorizontalSider_B_35Flow"/>
+              </div>
+            </div>
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
+                <bttdojo:a id="index_VerticalSlider" text="B36_VerticalSlider" flowId="VerticalSlider_B_36Flow"/>
+              </div>
+            </div>
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
+                <bttdojo:a id="index_Chart2D" text="B37_Chart2D" flowId="Chart2D_B_37Flow"/>
+              </div>
+            </div>
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
+                <bttdojo:a id="index_BorderContainer" text="B38_BorderContainer" flowId="BorderContainer_B_38Flow"/>
+              </div>
+            </div>
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
+                <bttdojo:a id="index_link18" text="B39_Repetitive Panel" flowId="RepetitivePanel_B_39Flow"/>
+              </div>
+            </div>
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
+                <bttdojo:a id="index_link19" text="B40_ConditionalPanel" flowId="ConditionalPanel_B_40Flow"/>
+              </div>
+            </div>
+            <div class="BTTRowStyle">
+              <div class="BTTCellStyle" align="left" style="vertical-align:middle;">
+                <bttdojo:a id="index_link20" text="B41_TitlePane" flowId="TitlePane_B_41Flow"/>
               </div>
             </div>
           </div>
