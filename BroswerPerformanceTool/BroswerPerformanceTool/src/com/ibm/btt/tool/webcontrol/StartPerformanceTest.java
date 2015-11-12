@@ -12,6 +12,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import com.ibm.btt.tool.common.ToolProperty;
+
 public class StartPerformanceTest {
 	 private WebDriver driver;
 	  private String baseUrl;
@@ -38,7 +40,7 @@ public class StartPerformanceTest {
 			ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);   
 			WebDriver driver = new InternetExplorerDriver(ieCapabilities); 
 		*/
-	    baseUrl = "http://lib.tsinghua.edu.cn/";
+	    baseUrl = ToolProperty.url;
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }

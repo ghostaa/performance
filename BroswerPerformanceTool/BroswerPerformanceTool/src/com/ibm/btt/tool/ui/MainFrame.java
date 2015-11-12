@@ -24,6 +24,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import com.ibm.btt.tool.common.ToolProperty;
 import com.ibm.btt.tool.webcontrol.StartPerformanceTest;
 
 public class MainFrame extends JFrame {
@@ -33,7 +34,7 @@ public class MainFrame extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField text_url;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField text_ie_path;
@@ -116,10 +117,10 @@ public class MainFrame extends JFrame {
 		label.setBounds(32, 39, 66, 14);
 		contentPane.add(label);
 		
-		textField = new JTextField();
-		textField.setBounds(96, 36, 189, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		text_url = new JTextField();
+		text_url.setBounds(96, 36, 189, 20);
+		contentPane.add(text_url);
+		text_url.setColumns(10);
 		
 		JLabel label_1 = new JLabel("\u70B9\u51FB\u95F4\u9694");
 		label_1.setBounds(32, 77, 66, 14);
@@ -240,6 +241,7 @@ public class MainFrame extends JFrame {
 		button_start_record.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				widgets_disable(button_start_record);
+				gatherInformation();
 				try {
 					new StartPerformanceTest().start();
 				} catch (Exception e) {
@@ -251,6 +253,8 @@ public class MainFrame extends JFrame {
 					widgets_enable(button_start_record);						
 				}
 			}
+
+			
 		});
 		button_start_record.setBounds(449, 160, 89, 23);
 		contentPane.add(button_start_record);
@@ -283,5 +287,12 @@ public class MainFrame extends JFrame {
 	private void showInfoMessage(JComponent jwidget,String message,String title){
 		JOptionPane.showMessageDialog(jwidget, message,title, JOptionPane.INFORMATION_MESSAGE);
 		
+	}
+	private void gatherInformation() {
+		if (text_url.getText()!=null && !"".equals(text_url.getText())) {
+			ToolProperty.url=text_url.getText();
+		}else {
+			//load default file url;
+		}
 	}
 }
