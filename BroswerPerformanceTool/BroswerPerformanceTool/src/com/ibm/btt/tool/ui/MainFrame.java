@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -24,8 +25,13 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import org.json.JSONObject;
+
+import com.ibm.btt.tool.common.JSONObjectKey;
 import com.ibm.btt.tool.common.ToolProperty;
+import com.ibm.btt.tool.util.ConfigManager;
 import com.ibm.btt.tool.webcontrol.StartPerformanceTest;
+import com.ibm.security.krb5.internal.Config;
 
 public class MainFrame extends JFrame {
 
@@ -35,13 +41,14 @@ public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField text_url;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField text_recordInterval;
+	private JTextField text_waitTime;
 	private JTextField text_ie_path;
 	private JTextField textField_4;
 	private JTextField text_import_batch_files;
 	private JTextField text_widget_id;
-
+	private JTextField text_totaltimes;
+	private ConfigManager configMng=new ConfigManager();
 	/**
 	 * Launch the application.
 	 */
@@ -49,6 +56,7 @@ public class MainFrame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					
 					MainFrame frame = new MainFrame();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -62,6 +70,12 @@ public class MainFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public MainFrame() {
+		JSONObject jsonObject=configMng.loadConfigFileAsJSONObject();
+		ToolProperty.url=jsonObject.getString(JSONObjectKey.CONFIG_URL);
+		ToolProperty.recordInterval=jsonObject.getInt(JSONObjectKey.CONFIG_RECORD_INTERVAL);
+		ToolProperty.totalTimes=jsonObject.getInt(JSONObjectKey.CONFIG_TOTAL_TIMES);
+		ToolProperty.waitTime=jsonObject.getInt(JSONObjectKey.CONFIG_WAIT_TIME);
+		
 		setTitle("BTT Broswer Performance Tool");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 850, 476);
@@ -69,12 +83,29 @@ public class MainFrame extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnNewMenu = new JMenu("Menu");
-		mnNewMenu.setEnabled(false);
+		JMenu mnNewMenu = new JMenu(Messages.getString("MainFrame.mnNewMenu.text")); //$NON-NLS-1$
 		menuBar.add(mnNewMenu);
 		
-		JMenu mnNewMenu_1 = new JMenu("New menu");
+		JMenu mnNewMenu_1 = new JMenu(Messages.getString("MainFrame.mnNewMenu_1.text")); //$NON-NLS-1$
 		mnNewMenu.add(mnNewMenu_1);
+		
+		JMenuItem menuItem_save_config = new JMenuItem(Messages.getString("MainFrame.menuItem.text"));
+		menuItem_save_config.setSelected(true);
+		menuItem_save_config.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					configMng.saveConfigFileAsJSONObject(getConfigJSONObjectFromFront());
+					showInfoMessage(rootPane, "保存成功", "配置文件保存结果");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+			
+		});
+		mnNewMenu_1.add(menuItem_save_config);
 		
 		JMenu mnNewMenu_2 = new JMenu("Menu2");
 		mnNewMenu_2.setEnabled(false);
@@ -118,27 +149,30 @@ public class MainFrame extends JFrame {
 		contentPane.add(label);
 		
 		text_url = new JTextField();
-		text_url.setBounds(96, 36, 189, 20);
-		contentPane.add(text_url);
+		text_url.setBounds(96, 36, 688, 20);
+		text_url.setText(ToolProperty.url);
 		text_url.setColumns(10);
+		contentPane.add(text_url);
 		
-		JLabel label_1 = new JLabel("\u70B9\u51FB\u95F4\u9694");
-		label_1.setBounds(32, 77, 66, 14);
+		JLabel label_1 = new JLabel(Messages.getString("MainFrame.label_1.text")); //$NON-NLS-1$
+		label_1.setBounds(32, 111, 66, 14);
 		contentPane.add(label_1);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(96, 74, 189, 20);
-		contentPane.add(textField_1);
+		text_recordInterval = new JTextField();
+		text_recordInterval.setColumns(10);
+		text_recordInterval.setBounds(96, 108, 189, 20);
+		text_recordInterval.setText(String.valueOf(ToolProperty.recordInterval));
+		contentPane.add(text_recordInterval);
 		
-		JLabel label_2 = new JLabel("\u8BB0\u5F55\u5468\u671F");
-		label_2.setBounds(32, 122, 66, 14);
+		JLabel label_2 = new JLabel(Messages.getString("MainFrame.label_2.text")); //$NON-NLS-1$
+		label_2.setBounds(32, 139, 66, 14);
 		contentPane.add(label_2);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(96, 119, 189, 20);
-		contentPane.add(textField_2);
+		text_waitTime = new JTextField();
+		text_waitTime.setColumns(10);
+		text_waitTime.setBounds(96, 136, 189, 20);
+		text_waitTime.setText(String.valueOf(ToolProperty.waitTime));
+		contentPane.add(text_waitTime);
 		
 		JLabel lblIe = new JLabel("IE\u8DEF\u5F84");
 		lblIe.setBounds(32, 164, 66, 14);
@@ -151,6 +185,7 @@ public class MainFrame extends JFrame {
 		contentPane.add(text_ie_path);
 		
 		final JCheckBox checkbox_ie_default_path = new JCheckBox("IE\u662F\u9ED8\u8BA4\u8DEF\u5F84");
+		checkbox_ie_default_path.setEnabled(false);
 		checkbox_ie_default_path.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent evaent) {
 				if (checkbox_ie_default_path.isSelected()) {
@@ -166,46 +201,46 @@ public class MainFrame extends JFrame {
 		contentPane.add(checkbox_ie_default_path);
 		
 		JLabel label_3 = new JLabel("\u62A5\u544A\u7ED3\u679C\u8DEF\u5F84");
-		label_3.setBounds(321, 39, 105, 14);
+		label_3.setBounds(317, 83, 105, 14);
 		contentPane.add(label_3);
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
-		textField_4.setBounds(452, 36, 189, 20);
+		textField_4.setBounds(412, 80, 189, 20);
 		contentPane.add(textField_4);
 		
 		JLabel label_improt_batch_files = new JLabel("\u5BFC\u5165\u6279\u91CF\u6587\u4EF6");
-		label_improt_batch_files.setBounds(412, 74, 102, 14);
+		label_improt_batch_files.setBounds(412, 111, 126, 14);
 		contentPane.add(label_improt_batch_files);
 		
 		text_import_batch_files = new JTextField();
 		text_import_batch_files.setColumns(10);
-		text_import_batch_files.setBounds(496, 71, 189, 20);
+		text_import_batch_files.setBounds(496, 108, 189, 20);
 		contentPane.add(text_import_batch_files);
 		
 		JLabel lblWidgetId = new JLabel("widget ID");
-		lblWidgetId.setBounds(412, 119, 102, 14);
+		lblWidgetId.setBounds(412, 139, 102, 14);
 		contentPane.add(lblWidgetId);
 		
 		text_widget_id = new JTextField();
 		text_widget_id.setEnabled(false);
 		text_widget_id.setColumns(10);
-		text_widget_id.setBounds(496, 116, 189, 20);
+		text_widget_id.setBounds(496, 136, 189, 20);
 		contentPane.add(text_widget_id);
 		
 		JRadioButton radio_batch_record = new JRadioButton("\u6279\u91CF\u8BB0\u5F55");
 		radio_batch_record.setBackground(SystemColor.info);
 		radio_batch_record.setSelected(true);
-		radio_batch_record.setBounds(317, 73, 109, 23);
+		radio_batch_record.setBounds(317, 107, 109, 23);
 		contentPane.add(radio_batch_record);
 		
 		JRadioButton radio_single_record = new JRadioButton("\u5355\u4E2A\u8BB0\u5F55");
 		radio_single_record.setBackground(SystemColor.info);
-		radio_single_record.setBounds(317, 118, 109, 23);
+		radio_single_record.setBounds(317, 135, 109, 23);
 		contentPane.add(radio_single_record);
 		
 		final JButton button_upload = new JButton(Messages.getString("Upload")); //$NON-NLS-1$
-		button_upload.setBounds(707, 70, 77, 23);
+		button_upload.setBounds(707, 107, 77, 23);
 		contentPane.add(button_upload);
 		
 		radio_batch_record.addActionListener(new ActionListener() {
@@ -231,8 +266,10 @@ public class MainFrame extends JFrame {
 		bg.add(radio_single_record);
 		
 		JCheckBox checkBox = new JCheckBox("\u751F\u6210\u65B0\u62A5\u544A");
+		checkBox.setEnabled(false);
+		checkBox.setSelected(true);
 		checkBox.setBackground(SystemColor.info);
-		checkBox.setBounds(647, 35, 97, 23);
+		checkBox.setBounds(647, 78, 97, 23);
 		contentPane.add(checkBox);
 		
 		
@@ -266,33 +303,82 @@ public class MainFrame extends JFrame {
 		JTextArea textArea = new JTextArea();
 		textArea.setLineWrap(true);
 		scrollPane.setViewportView(textArea);
+		
+		JLabel label_4 = new JLabel(Messages.getString("MainFrame.label_4.text")); //$NON-NLS-1$
+		label_4.setBounds(32, 86, 66, 14);
+		contentPane.add(label_4);
+		
+		text_totaltimes = new JTextField();
+		text_totaltimes.setColumns(10);
+		text_totaltimes.setBounds(96, 80, 189, 20);
+		text_totaltimes.setText(String.valueOf(ToolProperty.totalTimes));
+		contentPane.add(text_totaltimes);
 	}
-	
+	/**
+	 * 批量disable控件
+	 * @param jcom 可以传入多个控件
+	 */
 	private void widgets_disable(JComponent...jcom) {
 		// TODO Auto-generated method stub
 		for (JComponent jComponent : jcom) {
 			jComponent.setEnabled(false);
 		}
 	}
+	/**
+	 * 批量enable控件
+	 * @param jcom 可以传入多个空间
+	 */
 	private void widgets_enable(JComponent...jcom) {
 		// TODO Auto-generated method stub
 		for (JComponent jComponent : jcom) {
 			jComponent.setEnabled(true);
 		}
 	}
+	/**
+	 * 显示错误信息
+	 * @param jwidget 基于哪个控件
+	 * @param e 异常类
+	 * @param title 题目
+	 */
 	private void showErrorMessage(JComponent jwidget,Exception e,String title){
 		JOptionPane.showMessageDialog(jwidget, e,title, JOptionPane.ERROR_MESSAGE);
 		
 	}
+	/**
+	 * 显示信息
+	 * @param jwidget 基于哪个控件
+	 * @param message 信息内容
+	 * @param title 题目
+	 */
 	private void showInfoMessage(JComponent jwidget,String message,String title){
 		JOptionPane.showMessageDialog(jwidget, message,title, JOptionPane.INFORMATION_MESSAGE);
 		
 	}
+	/**
+	 * 收集前端所有数据到系统变量
+	 */
 	private void gatherInformation() {
 		if (text_url.getText()!=null && !"".equals(text_url.getText())) {
 			ToolProperty.url=text_url.getText();
+			ToolProperty.totalTimes= Integer.valueOf(text_totaltimes.getText());
+			ToolProperty.recordInterval=Integer.valueOf(text_recordInterval.getText());
+			ToolProperty.waitTime= Integer.valueOf(text_waitTime.getText());
+			
 		}else {
 			//load default file url;
 		}
+	}
+	/**
+	 * 获得前端所有数据，并返回他的json对象
+	 * @return 前端所有数据对应的json对象
+	 */
+	private JSONObject getConfigJSONObjectFromFront() {
+		JSONObject configJsonObject=new JSONObject();
+		configJsonObject.put(JSONObjectKey.CONFIG_URL, text_url.getText());
+		configJsonObject.put(JSONObjectKey.CONFIG_TOTAL_TIMES, text_totaltimes.getText());
+		configJsonObject.put(JSONObjectKey.CONFIG_RECORD_INTERVAL, text_recordInterval.getText());
+		configJsonObject.put(JSONObjectKey.CONFIG_WAIT_TIME, text_waitTime.getText());
+		
+		return configJsonObject;
 	}
 }

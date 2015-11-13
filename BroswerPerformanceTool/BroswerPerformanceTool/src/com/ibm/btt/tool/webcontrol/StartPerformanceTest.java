@@ -36,25 +36,25 @@ public class StartPerformanceTest {
 	  public void setUp() throws Exception {
 		System.setProperty("webdriver.ie.driver",System.getProperty("user.dir")+"\\driver\\ie\\IEDriverServer.exe"); 
 		driver = new InternetExplorerDriver();
-			/*DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();   
+		/*DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();   
 			ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);   
 			WebDriver driver = new InternetExplorerDriver(ieCapabilities); 
 		*/
 	    baseUrl = ToolProperty.url;
+//	    baseUrl = "http://9.112.234.65:8080";
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
 
 	  @Test
 	  public void test() throws Exception {
-	    driver.get(baseUrl + "/dra/");
-	    driver.findElement(By.linkText("资  源")).click();
-	    driver.findElement(By.cssSelector("b > a")).click();
-	    try {
-	      assertEquals("为了保护电子资源的知识产权，维护清华大学的声誉，也为了保证广大合法用户的正当权益，图书馆要求各使用单位和个人重视并遵守电子资源知识产权的有关规定。", driver.findElement(By.cssSelector("b")).getText());
-	    } catch (Error e) {
-	      verificationErrors.append(e.toString());
-	    }
+		driver.get(baseUrl);
+		driver.findElement(By.linkText("Establish Session")).click();
+		driver.findElement(By.id("index_link")).click();
+		for (int i = 0; i < ToolProperty.totalTimes; i++) {
+			Thread.sleep(ToolProperty.waitTime);
+			driver.findElement(By.id("Anchor_B_1_btn_reload_label")).click();
+		}
 	  }
 
 	  @After
