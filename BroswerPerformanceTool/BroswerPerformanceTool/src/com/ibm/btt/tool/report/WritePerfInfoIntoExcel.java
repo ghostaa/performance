@@ -37,7 +37,7 @@ public class WritePerfInfoIntoExcel {
 		MemoryMap memory = new MemoryMap();
 		empinfo = memory.getWorkingSet();
 		String[] color = {"BLUE","BRIGHT_GREEN","CORAL","CORNFLOWER_BLUE","GOLD","GREEN",
-				"LIGHT_GREEN","LIGHT_ORANGE","LIGHT_TURQUOISE","LIGHT_YELLOW","ORANGE","ORCHID","PINK","RED","ROSE","ROYAL_BLUE","SEA_GREEN","SKY_BLUE","YELLOW"};
+				"LIGHT_GREEN","LIGHT_ORANGE","LIGHT_YELLOW","ORANGE","PINK","RED","ROSE","ROYAL_BLUE","SEA_GREEN","SKY_BLUE","YELLOW"};
 		
 		FileInputStream fis = new FileInputStream(
 				new File("E:/IEperformance.xlsx"));
@@ -73,7 +73,7 @@ public class WritePerfInfoIntoExcel {
 			cellcount = cellid;
 			Cell cellWs = rowWs.createCell(cellid++);
 			cellCount.setCellValue(empinfo.get(i));
-			cellWs.setCellValue(i*ToolProperty.getRecordInterval());
+			cellWs.setCellValue(i*ToolProperty.recordInterval);
 			cellCount.setCellStyle(style);
 			cellWs.setCellStyle(style);
 			

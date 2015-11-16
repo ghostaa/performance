@@ -23,7 +23,7 @@ public class MemoryMap{
 			BrowserMemory bm = new BrowserMemory();
 			workingset = bm.getMemory(processName,1);
 		}
-		if(currenttime%ToolProperty.getRecordInterval() == 0){
+		if(currenttime%ToolProperty.recordInterval == 0){
 			memory.add(workingset);	
 		}	
 	}
