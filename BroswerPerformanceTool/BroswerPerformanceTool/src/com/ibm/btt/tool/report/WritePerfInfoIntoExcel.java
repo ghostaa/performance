@@ -4,15 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
 
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFFont;
@@ -28,18 +23,20 @@ public class WritePerfInfoIntoExcel {
 	/**
 	 * @param args
 	 * @throws Exception 
+	 * @throws  
+	 * @throws Exception 
 	 * sheet index is a parameter of the function - writePerformanceIntoExcel
 	 * get the results and save in a map, when write in excel ,iterator the map
 	 */
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception{
 		
 		List <String> empinfo = new ArrayList<String>();
 		MemoryMap memory = new MemoryMap();
 		empinfo = memory.getCurrentAllResults();
 		/*String[] color = {"BLUE","BRIGHT_GREEN","CORAL","CORNFLOWER_BLUE","GOLD","GREEN",
-				"LIGHT_GREEN","LIGHT_ORANGE","LIGHT_YELLOW","ORANGE","PINK","RED","ROSE","ROYAL_BLUE","SEA_GREEN","SKY_BLUE","YELLOW"};*/	
-		FileInputStream fis = new FileInputStream(
-				new File("E:/IEperformance.xlsx"));
+				"LIGHT_GREEN","LIGHT_ORANGE","LIGHT_YELLOW","ORANGE","PINK","RED","ROSE","ROYAL_BLUE","SEA_GREEN","SKY_BLUE","YELLOW"};*/
+		
+		FileInputStream fis = new FileInputStream(new File("E:/IEperformance.xlsx"));
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 		XSSFSheet spreadsheet = workbook.getSheetAt(0);
 		
