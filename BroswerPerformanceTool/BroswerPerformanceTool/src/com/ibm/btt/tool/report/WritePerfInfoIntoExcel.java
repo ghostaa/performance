@@ -35,10 +35,9 @@ public class WritePerfInfoIntoExcel {
 		
 		List <String> empinfo = new ArrayList<String>();
 		MemoryMap memory = new MemoryMap();
-		empinfo = memory.getWorkingSet();
-		String[] color = {"BLUE","BRIGHT_GREEN","CORAL","CORNFLOWER_BLUE","GOLD","GREEN",
-				"LIGHT_GREEN","LIGHT_ORANGE","LIGHT_YELLOW","ORANGE","PINK","RED","ROSE","ROYAL_BLUE","SEA_GREEN","SKY_BLUE","YELLOW"};
-		
+		empinfo = memory.getCurrentAllResults();
+		/*String[] color = {"BLUE","BRIGHT_GREEN","CORAL","CORNFLOWER_BLUE","GOLD","GREEN",
+				"LIGHT_GREEN","LIGHT_ORANGE","LIGHT_YELLOW","ORANGE","PINK","RED","ROSE","ROYAL_BLUE","SEA_GREEN","SKY_BLUE","YELLOW"};*/	
 		FileInputStream fis = new FileInputStream(
 				new File("E:/IEperformance.xlsx"));
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
@@ -62,7 +61,6 @@ public class WritePerfInfoIntoExcel {
 		style.setAlignment(XSSFCellStyle.ALIGN_RIGHT);
 		XSSFRow rowCount = null;
 		XSSFRow rowWs = null;
-		//Set < String > keyid = empinfo.keySet();
 		int rowid = 2;
 		int cellcount = 0;
 		for(int i=0; i<empinfo.size();i++){
@@ -112,17 +110,3 @@ public class WritePerfInfoIntoExcel {
 	}
 
 }
-
-/* Iterator<Cell> cellIterator = row.cellIterator();
- * 循环判断cell中是否有数据
- * while(cellIterator.hasNext()){
-   Cell cellinrow3 = cellIterator.next();
-   switch(cellinrow3.getCellType()){
-  	case Cell.CELL_TYPE_NUMERIC:
-	  lastvalue = ""+cellinrow3.getNumericCellValue();
-	  break;
-  	case Cell.CELL_TYPE_STRING:
-	  lastvalue = cellinrow3.getStringCellValue();
-	  break;
-	}
-}*/
