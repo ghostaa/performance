@@ -3,7 +3,9 @@ package com.ibm.btt.tool.report;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -18,6 +20,9 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.ibm.btt.tool.common.ToolProperty;
+import com.ibm.btt.tool.memory.MemoryMap;
+
 public class WritePerfInfoIntoExcel {
 
 	/**
@@ -28,13 +33,11 @@ public class WritePerfInfoIntoExcel {
 	 */
 	public static void main(String[] args) throws Exception {
 		
-		Map <String, Object[]> empinfo = new TreeMap<String,Object[]>();
-		empinfo.put( "1", new Object[] {"Count","20", "40", "60","80","100"});
-		empinfo.put( "2", new Object[] {"WorkingSet","123.56", "23.54", "456.65","655.76","435.999"});
-		String[] color = {"BLUE","BRIGHT_GREEN","CORAL","CORNFLOWER_BLUE","GOLD","GREEN","LEMON_CHIFFON"
-				,"LIGHT_BLUE","LIGHT_GREEN","LIGHT_ORANGE","LIGHT_TURQUOISE","LIGHT_YELLOW","LIME","MAROON",
-				"ORANGE","ORCHID","PALE_BLUE","PINK","PLUM","RED","ROSE","ROYAL_BLUE",
-				"SEA_GREEN","SKY_BLUE","TAN","TEAL","TURQUOISE","VIOLET","YELLOW"};
+		List <String> empinfo = new ArrayList<String>();
+		MemoryMap memory = new MemoryMap();
+		empinfo = memory.getWorkingSet();
+		String[] color = {"BLUE","BRIGHT_GREEN","CORAL","CORNFLOWER_BLUE","GOLD","GREEN",
+				"LIGHT_GREEN","LIGHT_ORANGE","LIGHT_TURQUOISE","LIGHT_YELLOW","ORANGE","ORCHID","PINK","RED","ROSE","ROYAL_BLUE","SEA_GREEN","SKY_BLUE","YELLOW"};
 		
 		FileInputStream fis = new FileInputStream(
 				new File("E:/IEperformance.xlsx"));
@@ -48,7 +51,7 @@ public class WritePerfInfoIntoExcel {
 		XSSFFont font = workbook.createFont();
 		font.setBold(true);
 		font.setFontHeight(10);
-		font.setColor(HSSFColor.BLACK.index);
+		font.setColor(HSSFColor.BLUE.index);
 		style.setFont(font);
 		style.setAlignment(XSSFCellStyle.ALIGN_LEFT);
 		cell1.setCellValue("8200 (IE11-Reload) Test Results");
@@ -57,26 +60,29 @@ public class WritePerfInfoIntoExcel {
 		//The second is count,The third is results
 		style = workbook.createCellStyle();
 		style.setAlignment(XSSFCellStyle.ALIGN_RIGHT);
-		XSSFRow row = null;
-		Set < String > keyid = empinfo.keySet();
+		XSSFRow rowCount = null;
+		XSSFRow rowWs = null;
+		//Set < String > keyid = empinfo.keySet();
 		int rowid = 2;
 		int cellcount = 0;
-		for(String key : keyid){
-			row = spreadsheet.createRow(rowid++);
-			Object [] objectArr = empinfo.get(key);
+		for(int i=0; i<empinfo.size();i++){
+			rowCount = spreadsheet.createRow(3);
+			rowWs = spreadsheet.createRow(4);
 			int cellid=0;
-			for(Object obj:objectArr){
-				Cell cell = row.createCell(cellid++);
-				cell.setCellValue((String)obj);
-				cell.setCellStyle(style);
-			}
+			Cell cellCount = rowCount.createCell(cellid++);
 			cellcount = cellid;
+			Cell cellWs = rowWs.createCell(cellid++);
+			cellCount.setCellValue(empinfo.get(i));
+			cellWs.setCellValue(i*ToolProperty.getRecordInterval());
+			cellCount.setCellStyle(style);
+			cellWs.setCellStyle(style);
+			
 		}
 		//set the backgroundcolor of row1
 		XSSFCellStyle bgstyle = workbook.createCellStyle();
 		//bgstyle.setFillBackgroundColor(HSSFColor.LEMON_CHIFFON.index);
-		bgstyle.setFillBackgroundColor(HSSFColor.LEMON_CHIFFON.index);
-		bgstyle.setFillPattern( XSSFCellStyle.ALIGN_CENTER);
+		bgstyle.setFillBackgroundColor(HSSFColor.BLUE.index);
+		bgstyle.setFillPattern( XSSFCellStyle.THIN_HORZ_BANDS);
 		cell1.setCellStyle(bgstyle);
 		for(int i = 1; i< cellcount; i++){
 			Cell cell = row1.createCell(i);
@@ -85,9 +91,9 @@ public class WritePerfInfoIntoExcel {
 		//Get the first value and last value of the workingSet row
 		String firstvalue = "";
 		String lastvalue = "";
-		firstvalue = row.getCell(1).getStringCellValue();
-		short a = row.getLastCellNum();
-		lastvalue = row.getCell(a-1).getStringCellValue();
+		firstvalue = rowWs.getCell(1).getStringCellValue();
+		short a = rowWs.getLastCellNum();
+		lastvalue = rowWs.getCell(a-1).getStringCellValue();
 		System.out.println("================"+firstvalue);
 		System.out.println("================"+lastvalue);
 		//The forth is the subtract between the first result and the last result
