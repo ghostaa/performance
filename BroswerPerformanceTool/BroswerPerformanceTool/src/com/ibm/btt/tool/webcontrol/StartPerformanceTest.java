@@ -13,8 +13,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.ibm.btt.tool.common.ToolProperty;
+import com.ibm.btt.tool.memory.Memory;
+import com.ibm.btt.tool.memory.MemoryMap;
+import com.ibm.btt.tool.ui.MainFrame;
 
-public class StartPerformanceTest {
+public class StartPerformanceTest implements Runnable{
 	 private WebDriver driver;
 	  private String baseUrl;
 	  private StringBuffer verificationErrors = new StringBuffer();
@@ -51,9 +54,21 @@ public class StartPerformanceTest {
 		driver.get(baseUrl);
 		driver.findElement(By.linkText("Establish Session")).click();
 		driver.findElement(By.id("index_link")).click();
-		for (int i = 0; i < ToolProperty.totalTimes; i++) {
+		MemoryMap memoryMap=new MemoryMap();
+		for (int currentCount = 1; currentCount <= ToolProperty.totalTimes; currentCount++) {
 			Thread.sleep(ToolProperty.waitTime);
 			driver.findElement(By.id("Anchor_B_1_btn_reload_label")).click();
+			StringBuffer sb= new StringBuffer();
+			if(currentCount%ToolProperty.recordInterval == 0){
+				memoryMap.putMemoryInList(currentCount);
+				memoryMap.getCurrentAllResults();
+				
+				for (Memory memory : memoryMap.getCurrentAllResults()) {
+					sb.append(memory.getCurrentCount()+"\t"+memory.getWorkingset()+"\t");
+				}
+				MainFrame.textArea.setText(sb.toString());
+				
+			}
 		}
 	  }
 
@@ -65,4 +80,14 @@ public class StartPerformanceTest {
 	      fail(verificationErrorString);
 	    }
 	  }
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		try {
+			start();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

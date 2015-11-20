@@ -48,6 +48,7 @@ public class MainFrame extends JFrame {
 	private JTextField text_import_batch_files;
 	private JTextField text_widget_id;
 	private JTextField text_totaltimes;
+	public static JTextArea textArea = new JTextArea();
 	private ConfigManager configMng=new ConfigManager();
 	/**
 	 * Launch the application.
@@ -280,7 +281,9 @@ public class MainFrame extends JFrame {
 				widgets_disable(button_start_record);
 				gatherInformation();
 				try {
-					new StartPerformanceTest().start();
+					
+					Thread thread=new Thread(new StartPerformanceTest());
+					thread.start();
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -300,9 +303,10 @@ public class MainFrame extends JFrame {
 		scrollPane.setBounds(32, 192, 730, 211);
 		contentPane.add(scrollPane);
 		
-		JTextArea textArea = new JTextArea();
+		
 		textArea.setLineWrap(true);
 		scrollPane.setViewportView(textArea);
+		
 		
 		JLabel label_4 = new JLabel(Messages.getString("MainFrame.label_4.text")); //$NON-NLS-1$
 		label_4.setBounds(32, 86, 66, 14);
