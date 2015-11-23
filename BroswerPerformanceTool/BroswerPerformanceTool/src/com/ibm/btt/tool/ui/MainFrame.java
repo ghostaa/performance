@@ -48,6 +48,7 @@ public class MainFrame extends JFrame {
 	private JTextField text_import_batch_files;
 	private JTextField text_widget_id;
 	private JTextField text_totaltimes;
+	private JCheckBox singleThread;//是否单线程运行
 	public static JTextArea textArea = new JTextArea();
 	private ConfigManager configMng=new ConfigManager();
 	/**
@@ -71,11 +72,7 @@ public class MainFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public MainFrame() {
-		JSONObject jsonObject=configMng.loadConfigFileAsJSONObject();
-		ToolProperty.url=jsonObject.getString(JSONObjectKey.CONFIG_URL);
-		ToolProperty.recordInterval=jsonObject.getInt(JSONObjectKey.CONFIG_RECORD_INTERVAL);
-		ToolProperty.totalTimes=jsonObject.getInt(JSONObjectKey.CONFIG_TOTAL_TIMES);
-		ToolProperty.waitTime=jsonObject.getInt(JSONObjectKey.CONFIG_WAIT_TIME);
+		loadConfigFile();
 		
 		setTitle("BTT Broswer Performance Tool");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -145,6 +142,44 @@ public class MainFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		
+		final JButton button_start_record = new JButton("\u5F00\u59CB\u8BB0\u5F55");
+		button_start_record.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				widgets_disable(button_start_record);
+				gatherInformation();
+				if(singleThread.isSelected()){
+					try {
+						new StartPerformanceTest().start();
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}finally{
+						widgets_enable(button_start_record);						
+					}
+				}else {
+					
+					try {
+						
+						Thread thread=new Thread(new StartPerformanceTest());
+						thread.start();
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+						showErrorMessage(rootPane, e,"exception");
+						
+					}finally{
+						widgets_enable(button_start_record);						
+					}
+				}
+			}
+
+			
+		});
+		button_start_record.setBounds(402, 160, 88, 23);
+		contentPane.add(button_start_record);
+		
 		JLabel label = new JLabel("\u4E3B\u9875\u5730\u5740");
 		label.setBounds(32, 39, 66, 14);
 		contentPane.add(label);
@@ -198,7 +233,7 @@ public class MainFrame extends JFrame {
 		});
 		checkbox_ie_default_path.setSelected(true);
 		checkbox_ie_default_path.setBackground(SystemColor.info);
-		checkbox_ie_default_path.setBounds(296, 160, 130, 23);
+		checkbox_ie_default_path.setBounds(296, 160, 126, 23);
 		contentPane.add(checkbox_ie_default_path);
 		
 		JLabel label_3 = new JLabel("\u62A5\u544A\u7ED3\u679C\u8DEF\u5F84");
@@ -220,7 +255,7 @@ public class MainFrame extends JFrame {
 		contentPane.add(text_import_batch_files);
 		
 		JLabel lblWidgetId = new JLabel("widget ID");
-		lblWidgetId.setBounds(412, 139, 102, 14);
+		lblWidgetId.setBounds(412, 139, 105, 14);
 		contentPane.add(lblWidgetId);
 		
 		text_widget_id = new JTextField();
@@ -273,34 +308,8 @@ public class MainFrame extends JFrame {
 		checkBox.setBounds(647, 78, 97, 23);
 		contentPane.add(checkBox);
 		
-		
-		
-		final JButton button_start_record = new JButton("\u5F00\u59CB\u8BB0\u5F55");
-		button_start_record.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				widgets_disable(button_start_record);
-				gatherInformation();
-				try {
-					
-					Thread thread=new Thread(new StartPerformanceTest());
-					thread.start();
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					showErrorMessage(rootPane, e,"exception");
-					
-				}finally{
-					widgets_enable(button_start_record);						
-				}
-			}
-
-			
-		});
-		button_start_record.setBounds(449, 160, 89, 23);
-		contentPane.add(button_start_record);
-		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(32, 192, 730, 211);
+		scrollPane.setBounds(32, 192, 752, 211);
 		contentPane.add(scrollPane);
 		
 		
@@ -317,7 +326,23 @@ public class MainFrame extends JFrame {
 		text_totaltimes.setBounds(96, 80, 189, 20);
 		text_totaltimes.setText(String.valueOf(ToolProperty.totalTimes));
 		contentPane.add(text_totaltimes);
+		
+		singleThread = new JCheckBox(Messages.getString("MainFrame.singleThread.text")); //$NON-NLS-1$
+		singleThread.setBackground(SystemColor.info);
+		singleThread.setSelected(ToolProperty.singleThread);
+		singleThread.setBounds(496, 160, 116, 23);
+		contentPane.add(singleThread);
 	}
+	private void loadConfigFile() {
+		JSONObject jsonObject=configMng.loadConfigFileAsJSONObject();
+		ToolProperty.url=jsonObject.getString(JSONObjectKey.CONFIG_URL);
+		ToolProperty.recordInterval=jsonObject.getInt(JSONObjectKey.CONFIG_RECORD_INTERVAL);
+		ToolProperty.totalTimes=jsonObject.getInt(JSONObjectKey.CONFIG_TOTAL_TIMES);
+		ToolProperty.waitTime=jsonObject.getInt(JSONObjectKey.CONFIG_WAIT_TIME);
+		ToolProperty.singleThread=jsonObject.getBoolean(JSONObjectKey.CONFIG_SINGLE_THREAD);
+		
+	}
+
 	/**
 	 * 批量disable控件
 	 * @param jcom 可以传入多个控件
@@ -382,6 +407,7 @@ public class MainFrame extends JFrame {
 		configJsonObject.put(JSONObjectKey.CONFIG_TOTAL_TIMES, text_totaltimes.getText());
 		configJsonObject.put(JSONObjectKey.CONFIG_RECORD_INTERVAL, text_recordInterval.getText());
 		configJsonObject.put(JSONObjectKey.CONFIG_WAIT_TIME, text_waitTime.getText());
+		configJsonObject.put(JSONObjectKey.CONFIG_SINGLE_THREAD, singleThread.isSelected());
 		
 		return configJsonObject;
 	}

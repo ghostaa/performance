@@ -1,1 +1,1 @@
-{"waitTime":"3000","totalTimes":"3","recordInterval":"5","url":"http://9.112.234.65:8080/BTT8202WidgetsLeakTest_es/"}
+{"singleThread":false,"waitTime":"1000","totalTimes":"15","recordInterval":"1","url":"http://9.112.234.65:8080/BTT8202WidgetsLeakTest_es/"}

@@ -3,6 +3,7 @@ package com.ibm.btt.tool.webcontrol;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -28,6 +29,7 @@ public class StartPerformanceTest implements Runnable{
 			  this.test();
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 			throw e;
 		}finally{
 			this.tearDown();
@@ -60,11 +62,21 @@ public class StartPerformanceTest implements Runnable{
 			driver.findElement(By.id("Anchor_B_1_btn_reload_label")).click();
 			StringBuffer sb= new StringBuffer();
 			if(currentCount%ToolProperty.recordInterval == 0){
-				memoryMap.putMemoryInList(currentCount);
-				memoryMap.getCurrentAllResults();
-				
+				/*memoryMap.putMemoryInList(currentCount);
+				sb.append("Count\t")
 				for (Memory memory : memoryMap.getCurrentAllResults()) {
-					sb.append(memory.getCurrentCount()+"\t"+memory.getWorkingset()+"\t");
+					sb.append(memory.getCurrentCount()+"\f"+memory.getWorkingset()+"\t");
+				}
+				MainFrame.textArea.setText(sb.toString());*/
+				memoryMap.putMemoryInList(currentCount);
+				List<Memory> memorys =memoryMap.getCurrentAllResults();
+				sb.append("Count\t");
+				for (int i=0;i<memorys.size();i++) {
+					sb.append(memorys.get(i).getCurrentCount()+"\t");
+				}
+				sb.append("\nWorkSet\t");
+				for (int i=0;i<memorys.size();i++) {
+					sb.append(memorys.get(i).getWorkingset()+"\t");
 				}
 				MainFrame.textArea.setText(sb.toString());
 				

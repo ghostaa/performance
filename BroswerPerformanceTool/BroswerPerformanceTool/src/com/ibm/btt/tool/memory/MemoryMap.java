@@ -26,7 +26,6 @@ public class MemoryMap{
 		memorys = new ArrayList<Memory>();
 		 try {
 			 pids = ProcessFinder.find(sigar, "Exe.Name.re=(?i)iexplore");
-			 bm.gather(sigar, pids[pids.length-1]);
 		} catch (SigarException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -34,6 +33,7 @@ public class MemoryMap{
 	}
 	public void putMemoryInList(int currentCount) throws Exception{
 		String workingset = null;
+		bm.gather(sigar, pids[pids.length-1]);
 		workingset = Long.toString(bm.getResident()/1024);
 		Memory memory = new Memory();
 		memory.setWorkingset(workingset);
