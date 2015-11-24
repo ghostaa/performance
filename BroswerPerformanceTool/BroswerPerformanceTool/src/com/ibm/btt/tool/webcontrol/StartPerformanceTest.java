@@ -1,6 +1,5 @@
 package com.ibm.btt.tool.webcontrol;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.util.List;
@@ -16,13 +15,14 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import com.ibm.btt.tool.common.ToolProperty;
 import com.ibm.btt.tool.memory.Memory;
 import com.ibm.btt.tool.memory.MemoryMap;
+import com.ibm.btt.tool.report.WriteIntoExcel;
 import com.ibm.btt.tool.ui.MainFrame;
 
 public class StartPerformanceTest implements Runnable{
 	 private WebDriver driver;
 	  private String baseUrl;
 	  private StringBuffer verificationErrors = new StringBuffer();
-
+	  private WriteIntoExcel writeIntoExcel = new WriteIntoExcel();
 	  public void start() throws Exception {
 		  try {
 			  this.setUp();
@@ -82,6 +82,7 @@ public class StartPerformanceTest implements Runnable{
 				
 			}
 		}
+		writeIntoExcel.createExcel(memoryMap.getCurrentAllResults());
 	  }
 
 	  @After
