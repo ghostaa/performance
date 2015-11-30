@@ -12,6 +12,8 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.ibm.btt.tool.common.ToolProperty;
 import com.ibm.btt.tool.memory.Memory;
 
 public class WriteIntoExcel {
@@ -29,11 +31,17 @@ public class WriteIntoExcel {
 		if(out.equals(null)){
 			out = new FileOutputStream(new File("E:/IEperformance.xlsx"));
 		}*/
-	
+	String filePath = "";
 	XSSFWorkbook workbook = new XSSFWorkbook();
 	public void createExcel(List<Memory> empinfo){
 		try {
-			FileOutputStream out = new FileOutputStream(new File("E:/IEperformance.xlsx"));
+			if(ToolProperty.filePath == null || ToolProperty.filePath == ""){
+				filePath = "C:/BTTBrowserPerformanceReport.xlsx";
+			}else{
+				filePath = ToolProperty.filePath;
+			}
+			//String filePath;
+			FileOutputStream out = new FileOutputStream(new File(filePath));
 			XSSFSheet spreadsheet = workbook.createSheet("Test Results");
 	
 			//The first title
@@ -106,4 +114,21 @@ public class WriteIntoExcel {
 		style.setAlignment(XSSFCellStyle.ALIGN_LEFT);
 		return style;
 	}
+	/*public static void main(String[] args) {
+	List<Memory> empinfo = new ArrayList<Memory>();
+	Memory m = new Memory();
+	m.setCurrentCount(0);
+	m.setWorkingset("20");
+	empinfo.add(m);
+	Memory m1 = new Memory();
+	m1.setCurrentCount(10);
+	m1.setWorkingset("40");
+	empinfo.add(m1);
+	Memory m2 = new Memory();
+	m2.setCurrentCount(20);
+	m2.setWorkingset("60");
+	empinfo.add(m2);
+	WriteIntoExcel we = new WriteIntoExcel();
+	we.createExcel(empinfo);
+}*/
 }

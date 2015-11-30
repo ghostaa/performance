@@ -8,5 +8,6 @@ public class ToolProperty {
 	public static int recordInterval;//记录间隔(点击多少次记录一次)
 	public static int waitTime;//等待时间(多少秒点击一次)
 	public static String url;//网址
+	public static String filePath;//文件存放路径
 	public static Boolean singleThread;//是否是单线程
 }
