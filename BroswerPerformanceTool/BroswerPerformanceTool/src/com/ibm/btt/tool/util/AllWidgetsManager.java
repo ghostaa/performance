@@ -12,10 +12,10 @@ import org.json.JSONObject;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.JsonAdapter;
-import com.ibm.btt.tool.common.JSONObjectKey;
+import com.ibm.btt.tool.common.JSONObjectManager;
 import com.ibm.btt.tool.common.ToolProperty;
 
-public class All_Widgets_Manager {
+public class AllWidgetsManager {
 
 	/**
 	 * @param args
@@ -23,17 +23,22 @@ public class All_Widgets_Manager {
 	 */
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		All_Widgets_Manager all_Widgets_Manager = new All_Widgets_Manager();
-//		all_Widgets_Manager.loadConfigFile();
-		JSONArray jsonArray =new JSONArray();
+		AllWidgetsManager allWidgetsManager = new AllWidgetsManager();
+//		allWidgetsManager.loadConfigFile();
+		/*JSONArray jsonArray =new JSONArray();
 		JSONObject jsonObject= new JSONObject();
 		jsonObject.put("linktext", "B1_Anchor");
 		jsonObject.put("widgetid", "Anchor_B_1_btn_reload");
 		jsonArray.put(jsonObject);
-		all_Widgets_Manager.saveAllWidgetsFileAsJSONArray(jsonArray);
+		all_Widgets_Manager.saveAllWidgetsFileAsJSONArray(jsonArray);*/
+		JSONArray jsonArray = allWidgetsManager.loadAllWidgetsFileAsJSONObject();
+		for (int i = 0; i < jsonArray.length(); i++) {
+			System.out.println(((JSONObject)jsonArray.get(i)).get("linktext"));
+			System.out.println(((JSONObject)jsonArray.get(i)).get("widgetid"));
+		}
 	}
-	public JSONObject loadAllWidgetsFileAsJSONObject(){
-		JSONObject jsonObject=null;
+	public JSONArray loadAllWidgetsFileAsJSONObject(){
+		JSONArray jsonArray=null;
 		try {
 		File file=new File(ToolProperty.ALL_WIDGETS);
         if(!file.exists()||file.isDirectory())
@@ -47,12 +52,12 @@ public class All_Widgets_Manager {
             sb.append(temp+" ");
             temp=br.readLine();
         }
-        jsonObject = new JSONObject(sb.toString());
+        jsonArray = new JSONArray(sb.toString());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        return jsonObject;
+        return jsonArray;
 	}
 	
 	public void saveAllWidgetsFileAsJSONArray(JSONArray jsonArray) throws IOException{

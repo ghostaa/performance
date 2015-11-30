@@ -25,10 +25,12 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.ibm.btt.tool.common.JSONObjectKey;
+import com.ibm.btt.tool.common.JSONObjectManager;
 import com.ibm.btt.tool.common.ToolProperty;
+import com.ibm.btt.tool.util.AllWidgetsManager;
 import com.ibm.btt.tool.util.ConfigManager;
 import com.ibm.btt.tool.webcontrol.StartPerformanceTest;
 
@@ -50,6 +52,7 @@ public class MainFrame extends JFrame {
 	private JCheckBox singleThread;//是否单线程运行
 	public static JTextArea textArea = new JTextArea();
 	private ConfigManager configMng=new ConfigManager();
+	private AllWidgetsManager allWidgetsManager=new AllWidgetsManager();
 	/**
 	 * Launch the application.
 	 */
@@ -334,11 +337,16 @@ public class MainFrame extends JFrame {
 	}
 	private void loadConfigFile() {
 		JSONObject jsonObject=configMng.loadConfigFileAsJSONObject();
-		ToolProperty.url=jsonObject.getString(JSONObjectKey.CONFIG_URL);
-		ToolProperty.recordInterval=jsonObject.getInt(JSONObjectKey.CONFIG_RECORD_INTERVAL);
-		ToolProperty.totalTimes=jsonObject.getInt(JSONObjectKey.CONFIG_TOTAL_TIMES);
-		ToolProperty.waitTime=jsonObject.getInt(JSONObjectKey.CONFIG_WAIT_TIME);
-		ToolProperty.singleThread=jsonObject.getBoolean(JSONObjectKey.CONFIG_SINGLE_THREAD);
+		ToolProperty.url=jsonObject.getString(JSONObjectManager.CONFIG_URL);
+		ToolProperty.recordInterval=jsonObject.getInt(JSONObjectManager.CONFIG_RECORD_INTERVAL);
+		ToolProperty.totalTimes=jsonObject.getInt(JSONObjectManager.CONFIG_TOTAL_TIMES);
+		ToolProperty.waitTime=jsonObject.getInt(JSONObjectManager.CONFIG_WAIT_TIME);
+		ToolProperty.singleThread=jsonObject.getBoolean(JSONObjectManager.CONFIG_SINGLE_THREAD);
+		
+	}
+	private void loadAllWidgetsFile() {
+		
+		JSONObjectManager.all_widgets_json_array=allWidgetsManager.loadAllWidgetsFileAsJSONObject();
 		
 	}
 
@@ -395,6 +403,7 @@ public class MainFrame extends JFrame {
 		}else {
 			//load default file url;
 		}
+		loadAllWidgetsFile();
 	}
 	/**
 	 * 获得前端所有数据，并返回他的json对象
@@ -402,11 +411,11 @@ public class MainFrame extends JFrame {
 	 */
 	private JSONObject getConfigJSONObjectFromFront() {
 		JSONObject configJsonObject=new JSONObject();
-		configJsonObject.put(JSONObjectKey.CONFIG_URL, text_url.getText());
-		configJsonObject.put(JSONObjectKey.CONFIG_TOTAL_TIMES, text_totaltimes.getText());
-		configJsonObject.put(JSONObjectKey.CONFIG_RECORD_INTERVAL, text_recordInterval.getText());
-		configJsonObject.put(JSONObjectKey.CONFIG_WAIT_TIME, text_waitTime.getText());
-		configJsonObject.put(JSONObjectKey.CONFIG_SINGLE_THREAD, singleThread.isSelected());
+		configJsonObject.put(JSONObjectManager.CONFIG_URL, text_url.getText());
+		configJsonObject.put(JSONObjectManager.CONFIG_TOTAL_TIMES, text_totaltimes.getText());
+		configJsonObject.put(JSONObjectManager.CONFIG_RECORD_INTERVAL, text_recordInterval.getText());
+		configJsonObject.put(JSONObjectManager.CONFIG_WAIT_TIME, text_waitTime.getText());
+		configJsonObject.put(JSONObjectManager.CONFIG_SINGLE_THREAD, singleThread.isSelected());
 		
 		return configJsonObject;
 	}

@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.JsonAdapter;
-import com.ibm.btt.tool.common.JSONObjectKey;
+import com.ibm.btt.tool.common.JSONObjectManager;
 import com.ibm.btt.tool.common.ToolProperty;
 
 public class ConfigManager {
