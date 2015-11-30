@@ -2,13 +2,10 @@ package com.ibm.btt.tool.memory;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.hyperic.sigar.ProcMem;
 import org.hyperic.sigar.Sigar;
 import org.hyperic.sigar.SigarException;
 import org.hyperic.sigar.ptql.ProcessFinder;
-
-import com.ibm.btt.tool.common.ToolProperty;
 
 public class MemoryMap{
 	/**
@@ -27,7 +24,6 @@ public class MemoryMap{
 		 try {
 			 pids = ProcessFinder.find(sigar, "Exe.Name.re=(?i)iexplore");
 		} catch (SigarException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -57,11 +53,9 @@ public class MemoryMap{
 		MemoryMap memoryMap=new MemoryMap();
 		try {
 			for (int i = 0; i < 5; i++) {
-				
 				memoryMap.putMemoryInList(1);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println(memoryMap.getCurrentAllResults().size());
