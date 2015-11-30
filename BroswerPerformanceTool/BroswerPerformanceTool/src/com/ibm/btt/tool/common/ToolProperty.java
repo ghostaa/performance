@@ -1,8 +1,8 @@
 package com.ibm.btt.tool.common;
 
 public class ToolProperty {
-	public static final String CONFIG_PATH="config/config.txt";
-	
+	public static final String CONFIG_PATH="config/config.json";
+	public static final String ALL_WIDGETS="config/all_widgets.json";
 	
 	public static int totalTimes; //总次数(总共记录多少次数据)
 	public static int recordInterval;//记录间隔(点击多少次记录一次)
