@@ -31,7 +31,6 @@ import com.ibm.btt.tool.common.JSONObjectKey;
 import com.ibm.btt.tool.common.ToolProperty;
 import com.ibm.btt.tool.util.ConfigManager;
 import com.ibm.btt.tool.webcontrol.StartPerformanceTest;
-import com.ibm.security.krb5.internal.Config;
 
 public class MainFrame extends JFrame {
 
