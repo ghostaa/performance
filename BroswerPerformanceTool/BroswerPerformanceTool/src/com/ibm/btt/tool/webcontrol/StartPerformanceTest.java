@@ -27,7 +27,7 @@ public class StartPerformanceTest implements Runnable{
 	  private StringBuffer verificationErrors = new StringBuffer();
 	  private WriteIntoExcel writeIntoExcel = new WriteIntoExcel();
 	  @Before
-	  public void setUp() throws Exception {
+	  public void setUp()  {
 		System.setProperty("webdriver.ie.driver",System.getProperty("user.dir")+"\\driver\\ie\\IEDriverServer.exe"); 
 		driver = new InternetExplorerDriver();
 		/*DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();   
@@ -43,26 +43,41 @@ public class StartPerformanceTest implements Runnable{
 	  @Test
 	  public void start() throws Exception {
 		JSONArray widgetsArray=JSONObjectManager.all_widgets_json_array;
-		for (int index = 0; index < JSONObjectManager.all_widgets_json_array.length(); index++) {
-			setUp();
+		if (ToolProperty.recordType==ToolProperty.RECORD_BATCH) {
+			runMoreWidgets(widgetsArray);
+		}else if(ToolProperty.recordType==ToolProperty.RECORD_SINGLE){
+			for (int i = 0; i < widgetsArray.length(); i++) {
+				if (((JSONObject)widgetsArray.get(i)).getString("linktext").equals(ToolProperty.widgetIdOnTool)){
+					runOneWidget(ToolProperty.widgetIdOnTool,((JSONObject)widgetsArray.get(i)).getString("widgetid"));
+					break;
+				}
+			}
+		}
+	  }
+	  private void runMoreWidgets(JSONArray widgetsArray) {
+		  for (int index = 0; index < widgetsArray.length(); index++) {
+				String linktext=((JSONObject)widgetsArray.get(index)).getString("linktext");
+				String widgetid=((JSONObject)widgetsArray.get(index)).getString("widgetid");
+				runOneWidget(linktext,widgetid);
+				
+			  }
+	  }
+	  private void runOneWidget(String linktext,String widgetid) {
+		  	setUp();
 			driver.get(baseUrl);
 			driver.findElement(By.linkText("Establish Session")).click();
-			String linktext=((JSONObject)widgetsArray.get(index)).getString("linktext");
-			String widgetid=((JSONObject)widgetsArray.get(index)).getString("widgetid");
-			
 			driver.findElement(By.linkText(linktext)).click();
 			MemoryMap memoryMap=new MemoryMap();
 			for (int currentCount = 1; currentCount <= ToolProperty.totalTimes; currentCount++) {
-				Thread.sleep(ToolProperty.waitTime);
+				try {
+					Thread.sleep(ToolProperty.waitTime);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				driver.findElement(By.id(widgetid)).click();
 				StringBuffer sb= new StringBuffer();
 				if(currentCount%ToolProperty.recordInterval == 0){
-					/*memoryMap.putMemoryInList(currentCount);
-					sb.append("Count\t")
-					for (Memory memory : memoryMap.getCurrentAllResults()) {
-						sb.append(memory.getCurrentCount()+"\f"+memory.getWorkingset()+"\t");
-					}
-					MainFrame.textArea.setText(sb.toString());*/
 					memoryMap.putMemoryInList(currentCount);
 					List<Memory> memorys =memoryMap.getCurrentAllResults();
 					sb.append("Count\t");
@@ -79,11 +94,11 @@ public class StartPerformanceTest implements Runnable{
 			}
 			writeIntoExcel.intoExcel(memoryMap.getCurrentAllResults(),linktext);
 			tearDown();
-		  }
 	  }
-
+	  
+	  
 	  @After
-	  public void tearDown() throws Exception {
+	  public void tearDown(){
 	    driver.quit();
 	    String verificationErrorString = verificationErrors.toString();
 	    if (!"".equals(verificationErrorString)) {

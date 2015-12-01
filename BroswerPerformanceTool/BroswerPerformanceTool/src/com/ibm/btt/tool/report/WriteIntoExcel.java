@@ -22,7 +22,7 @@ public class WriteIntoExcel {
 	 */
 	String filePath = "";
 	//public static String[] buttonId = {"A1_LinkId","B1_linkid","C1_linkid"};
-	String recordName = "8200 (IE11-Reload) Test Results";
+	String recordName = "8203 (IE11-Reload) Test Results";
 	XSSFWorkbook workbook = new XSSFWorkbook();
 	private boolean flag=true;
 	//The main method of write into excel
@@ -79,9 +79,9 @@ public class WriteIntoExcel {
 	//output the workbook with workingset value
 	public void writeOut(XSSFWorkbook workbook){
 		if(ToolProperty.filePath == null || "".equals(ToolProperty.filePath)){
-			filePath = "C:/BTTBrowserPerformanceReport.xlsx";
+			filePath = "C:/"+ToolProperty.reportName;
 		}else{
-			filePath = ToolProperty.filePath;
+			filePath = ToolProperty.filePath+ToolProperty.reportName;
 		}
 		try {
 			FileOutputStream out = null;

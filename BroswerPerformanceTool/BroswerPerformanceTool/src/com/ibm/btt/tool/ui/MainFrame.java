@@ -4,12 +4,16 @@ import java.awt.EventQueue;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -21,6 +25,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -45,11 +50,13 @@ public class MainFrame extends JFrame {
 	private JTextField text_recordInterval;
 	private JTextField text_waitTime;
 	private JTextField text_ie_path;
-	private JTextField textField_4;
+	private JTextField result_path_text;
 	private JTextField text_import_batch_files;
-	private JTextField text_widget_id;
+	private JTextField widget_id_text;
 	private JTextField text_totaltimes;
 	private JCheckBox singleThread;//是否单线程运行
+	private JRadioButton radio_batch_record;
+	private JRadioButton radio_single_record;
 	public static JTextArea textArea = new JTextArea();
 	private ConfigManager configMng=new ConfigManager();
 	private AllWidgetsManager allWidgetsManager=new AllWidgetsManager();
@@ -106,12 +113,13 @@ public class MainFrame extends JFrame {
 			
 		});
 		mnNewMenu_1.add(menuItem_save_config);
+		menuItem_save_config.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,InputEvent.CTRL_MASK));
 		
-		JMenu mnNewMenu_2 = new JMenu("Menu2");
+		JMenu mnNewMenu_2 = new JMenu(Messages.getString("MainFrame.mnNewMenu_2.text")); //$NON-NLS-1$
 		mnNewMenu_2.setEnabled(false);
 		menuBar.add(mnNewMenu_2);
 		
-		final JMenu Menu_Help = new JMenu("Help");
+		final JMenu Menu_Help = new JMenu(Messages.getString("Help")); //$NON-NLS-1$
 		menuBar.add(Menu_Help);
 		
 		JMenuItem menu_About = new JMenuItem(Messages.getString("About")); //$NON-NLS-1$
@@ -125,6 +133,7 @@ public class MainFrame extends JFrame {
 				return "Author:Yan Dongpeng,Shang jing\n2015.11.12\nCopyright IBM BTT";
 			}
 		});
+		menu_About.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1,0));
 		
 		Menu_Help.add(menu_About);
 		
@@ -143,7 +152,6 @@ public class MainFrame extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
 		
 		
 		final JButton button_start_record = new JButton("\u5F00\u59CB\u8BB0\u5F55");
@@ -179,6 +187,11 @@ public class MainFrame extends JFrame {
 
 			
 		});
+		
+		
+		
+		
+		
 		button_start_record.setBounds(402, 160, 88, 23);
 		contentPane.add(button_start_record);
 		
@@ -242,10 +255,11 @@ public class MainFrame extends JFrame {
 		label_3.setBounds(317, 83, 105, 14);
 		contentPane.add(label_3);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(412, 80, 189, 20);
-		contentPane.add(textField_4);
+		result_path_text = new JTextField();
+		result_path_text.setColumns(10);
+		result_path_text.setBounds(412, 80, 189, 20);
+		result_path_text.setText(ToolProperty.filePath);
+		contentPane.add(result_path_text);
 		
 		JLabel label_improt_batch_files = new JLabel("\u5BFC\u5165\u6279\u91CF\u6587\u4EF6");
 		label_improt_batch_files.setBounds(412, 111, 126, 14);
@@ -260,31 +274,33 @@ public class MainFrame extends JFrame {
 		lblWidgetId.setBounds(412, 139, 105, 14);
 		contentPane.add(lblWidgetId);
 		
-		text_widget_id = new JTextField();
-		text_widget_id.setEnabled(false);
-		text_widget_id.setColumns(10);
-		text_widget_id.setBounds(496, 136, 189, 20);
-		contentPane.add(text_widget_id);
+		widget_id_text = new JTextField();
+		widget_id_text.setEnabled(false);
+		widget_id_text.setColumns(10);
+		widget_id_text.setBounds(496, 136, 189, 20);
+		contentPane.add(widget_id_text);
 		
-		JRadioButton radio_batch_record = new JRadioButton("\u6279\u91CF\u8BB0\u5F55");
+		radio_batch_record = new JRadioButton("\u6279\u91CF\u8BB0\u5F55");
 		radio_batch_record.setBackground(SystemColor.info);
 		radio_batch_record.setSelected(true);
-		radio_batch_record.setBounds(317, 107, 109, 23);
+		radio_batch_record.setBounds(317, 107, 88, 23);
 		contentPane.add(radio_batch_record);
 		
-		JRadioButton radio_single_record = new JRadioButton("\u5355\u4E2A\u8BB0\u5F55");
+		radio_single_record = new JRadioButton("\u5355\u4E2A\u8BB0\u5F55");
 		radio_single_record.setBackground(SystemColor.info);
-		radio_single_record.setBounds(317, 135, 109, 23);
+		radio_single_record.setBounds(317, 135, 88, 23);
 		contentPane.add(radio_single_record);
 		
 		final JButton button_upload = new JButton(Messages.getString("Upload")); //$NON-NLS-1$
+		button_upload.setEnabled(false);
 		button_upload.setBounds(707, 107, 77, 23);
 		contentPane.add(button_upload);
 		
 		radio_batch_record.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				widgets_disable(text_widget_id);
+				widgets_disable(widget_id_text);
 				widgets_enable(text_import_batch_files,button_upload);
+				
 			}
 
 			
@@ -293,21 +309,21 @@ public class MainFrame extends JFrame {
 		radio_single_record.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				widgets_disable(text_import_batch_files,button_upload);
-				widgets_enable(text_widget_id);
+				widgets_enable(widget_id_text);
 			}
 
 			
 		});
 		
-		ButtonGroup bg=new ButtonGroup();
-		bg.add(radio_batch_record);
-		bg.add(radio_single_record);
+		ButtonGroup recordNumberGroup=new ButtonGroup();
+		recordNumberGroup.add(radio_batch_record);
+		recordNumberGroup.add(radio_single_record);
 		
 		JCheckBox checkBox = new JCheckBox("\u751F\u6210\u65B0\u62A5\u544A");
 		checkBox.setEnabled(false);
 		checkBox.setSelected(true);
 		checkBox.setBackground(SystemColor.info);
-		checkBox.setBounds(647, 78, 97, 23);
+		checkBox.setBounds(707, 79, 97, 23);
 		contentPane.add(checkBox);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -334,6 +350,22 @@ public class MainFrame extends JFrame {
 		singleThread.setSelected(ToolProperty.singleThread);
 		singleThread.setBounds(496, 160, 116, 23);
 		contentPane.add(singleThread);
+		
+		final JButton broswerButton = new JButton(Messages.getString("MainFrame.btnNewButton.text_1")); //$NON-NLS-1$
+		broswerButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JFileChooser jFileChooser = new JFileChooser(Messages.getString("MainFrame.btnNewButton.text"));
+				jFileChooser.setAcceptAllFileFilterUsed(false);
+				jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+				jFileChooser.showOpenDialog(broswerButton);
+				 File file=jFileChooser.getSelectedFile();  
+			        if(file!=null && file.isDirectory()){  
+			        	result_path_text.setText(file.getAbsolutePath());  
+			        } 
+			}
+		});
+		broswerButton.setBounds(611, 79, 77, 23);
+		contentPane.add(broswerButton);
 	}
 	private void loadConfigFile() {
 		JSONObject jsonObject=configMng.loadConfigFileAsJSONObject();
@@ -342,7 +374,7 @@ public class MainFrame extends JFrame {
 		ToolProperty.totalTimes=jsonObject.getInt(JSONObjectManager.CONFIG_TOTAL_TIMES);
 		ToolProperty.waitTime=jsonObject.getInt(JSONObjectManager.CONFIG_WAIT_TIME);
 		ToolProperty.singleThread=jsonObject.getBoolean(JSONObjectManager.CONFIG_SINGLE_THREAD);
-		
+		ToolProperty.filePath=jsonObject.getString(JSONObjectManager.CONFIG_FILEPATH_STRING);
 	}
 	private void loadAllWidgetsFile() {
 		
@@ -399,7 +431,13 @@ public class MainFrame extends JFrame {
 			ToolProperty.totalTimes= Integer.valueOf(text_totaltimes.getText());
 			ToolProperty.recordInterval=Integer.valueOf(text_recordInterval.getText());
 			ToolProperty.waitTime= Integer.valueOf(text_waitTime.getText());
-			
+			ToolProperty.filePath=result_path_text.getText();
+			if (radio_batch_record.isSelected()) {
+				ToolProperty.recordType=ToolProperty.RECORD_BATCH;
+			}else if (radio_single_record.isSelected()) {
+				ToolProperty.recordType=ToolProperty.RECORD_SINGLE;
+				ToolProperty.widgetIdOnTool=widget_id_text.getText();
+			}
 		}else {
 			//load default file url;
 		}
@@ -416,6 +454,7 @@ public class MainFrame extends JFrame {
 		configJsonObject.put(JSONObjectManager.CONFIG_RECORD_INTERVAL, text_recordInterval.getText());
 		configJsonObject.put(JSONObjectManager.CONFIG_WAIT_TIME, text_waitTime.getText());
 		configJsonObject.put(JSONObjectManager.CONFIG_SINGLE_THREAD, singleThread.isSelected());
+		configJsonObject.put(JSONObjectManager.CONFIG_FILEPATH_STRING, result_path_text.getText());
 		
 		return configJsonObject;
 	}

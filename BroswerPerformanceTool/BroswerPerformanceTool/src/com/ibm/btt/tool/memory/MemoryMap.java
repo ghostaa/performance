@@ -27,9 +27,14 @@ public class MemoryMap{
 			e.printStackTrace();
 		}
 	}
-	public void putMemoryInList(int currentCount) throws Exception{
+	public void putMemoryInList(int currentCount){
 		String workingset = null;
-		bm.gather(sigar, pids[pids.length-1]);
+		try {
+			bm.gather(sigar, pids[pids.length-1]);
+		} catch (SigarException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		workingset = Long.toString(bm.getResident()/1024);
 		Memory memory = new Memory();
 		memory.setWorkingset(workingset);
