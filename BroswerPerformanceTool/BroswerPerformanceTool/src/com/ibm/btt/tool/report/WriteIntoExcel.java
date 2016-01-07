@@ -81,7 +81,7 @@ public class WriteIntoExcel {
 		if(ToolProperty.filePath == null || "".equals(ToolProperty.filePath)){
 			filePath = "C:/"+ToolProperty.reportName;
 		}else{
-			filePath = ToolProperty.filePath+ToolProperty.reportName;
+			filePath = ToolProperty.filePath+ "\"" +ToolProperty.reportName;
 		}
 		try {
 			FileOutputStream out = null;
