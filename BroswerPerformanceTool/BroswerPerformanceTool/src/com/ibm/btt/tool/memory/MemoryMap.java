@@ -7,6 +7,8 @@ import org.hyperic.sigar.Sigar;
 import org.hyperic.sigar.SigarException;
 import org.hyperic.sigar.ptql.ProcessFinder;
 
+import com.ibm.btt.tool.common.ToolProperty;
+
 public class MemoryMap{
 	/**
 	 * Get memory leak of IE
@@ -26,6 +28,8 @@ public class MemoryMap{
 		} catch (SigarException e) {
 			e.printStackTrace();
 		}
+		ToolProperty.processId = pids[pids.length-1]+""; //ie process id
+		System.out.println("IE process id is "+pids[pids.length-1]);
 	}
 	public void putMemoryInList(int currentCount){
 		String workingset = null;

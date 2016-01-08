@@ -15,4 +15,5 @@ public class ToolProperty {
 	public static String reportName="BTTBrowserPerformanceReport.xlsx";
 	public static String recordType;
 	public static String widgetIdOnTool;
+	public static String processId; //IE process id
 }
