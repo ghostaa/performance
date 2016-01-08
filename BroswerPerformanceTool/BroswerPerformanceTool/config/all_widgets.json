@@ -166,5 +166,9 @@
     {
         "linktext":"B43_Chart2D",
         "widgetid":"Chart2D_B_43_btn_reload"
+    },
+    {
+        "linktext":"B44_SimpleGrid",
+        "widgetid":"SimpleGrid_B_44_btn_reload"
     }
 ]
