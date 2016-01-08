@@ -77,7 +77,7 @@ public class StartPerformanceTest implements Runnable{
 				}
 				driver.findElement(By.id(widgetid)).click();
 				StringBuffer sb= new StringBuffer();
-				sb.append("Current browser id is "+ToolProperty.processId+"\n");
+				sb.append("Current browser pid is "+ToolProperty.processId+"\n");
 				if(currentCount%ToolProperty.recordInterval == 0){
 					memoryMap.putMemoryInList(currentCount);
 					List<Memory> memorys =memoryMap.getCurrentAllResults();
